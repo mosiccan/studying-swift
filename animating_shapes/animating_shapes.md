@@ -179,7 +179,7 @@ struct ExplodingView: View {
             Spacer()
             ZStack {
                 ForEach(0..<explodingBits, id: \.self) { _ in
-                    Rectangle() // isExploded가 true일 때 폭발
+                    Rectangle() // 작은 사각형들, isExploded가 true일 때 폭발
                         .rotation(Angle(degrees: Double.random(in: 0..<360)))   // 360도 방향으로 흐터짐
                         .frame(width: 20, height: 20)
                         .foregroundColor(.indigo)
