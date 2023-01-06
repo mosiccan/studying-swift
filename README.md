@@ -1,5 +1,5 @@
 # Studying-Swift
-> 유튜브 '개발자리'(리이오님) 채널의 강의들을 듣고 공부한 내용들 입니다!
+> 유튜브 '개발자리'(리이오님) 채널의 강의들을 듣고 공부한 내용들 입니다!  
 https://www.youtube.com/@Leeo25/playlists  
 
 <br>
@@ -25,11 +25,11 @@ https://www.youtube.com/@Leeo25/playlists
 - Choose your own story
 - Date planner
 - Image gallery
-- [Animating shapes]()
-- [Capturing photos]()
-- [Organizing with grid]()
-- [Editing grids](0)
-- [Recognizing gestures]()
+- [Animating shapes](https://github.com/mosiccan/studying-swift/blob/main/LEVEL0/animating_shapes/animating_shapes.md)
+- [Capturing photos](https://github.com/mosiccan/studying-swift/blob/main/LEVEL0/capturing_photo/capturing_photo.md)
+- [Organizing with grid](https://github.com/mosiccan/studying-swift/blob/main/LEVEL0/organizing_with_grid/organizing_with_grid.md)
+- [Editing grids](https://github.com/mosiccan/studying-swift/blob/main/LEVEL0/editing_grids/editing_grids.md)
+- [Recognizing gestures](https://github.com/mosiccan/studying-swift/blob/main/LEVEL0/recognizing_gestures/recognizing_gestures.md)
 
 <br>
 
