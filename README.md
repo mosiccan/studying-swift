@@ -36,6 +36,11 @@ https://www.youtube.com/@Leeo25/playlists
 ## LEVEL1
 ### 1. 클론코딩 계산기앱
 
+학습기간
+> 2023/01/06 ~ 2023/01/08
+
+
+
 <br>
 
 ### 2. SwiftUI로 배우는 Swift문법의 기초
