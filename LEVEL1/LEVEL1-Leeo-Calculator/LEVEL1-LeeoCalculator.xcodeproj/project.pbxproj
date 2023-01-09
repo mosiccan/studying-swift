@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD4BFAE22969551200B09048 /* LEVEL1_LeeoCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BFAE12969551200B09048 /* LEVEL1_LeeoCalculatorApp.swift */; };
+		CD4BFAE42969551200B09048 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BFAE32969551200B09048 /* ContentView.swift */; };
+		CD4BFAE62969551300B09048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4BFAE52969551300B09048 /* Assets.xcassets */; };
+		CD4BFAE92969551300B09048 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4BFAE82969551300B09048 /* Preview Assets.xcassets */; };
+		CD4BFAF32969551400B09048 /* LEVEL1_LeeoCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BFAF22969551400B09048 /* LEVEL1_LeeoCalculatorTests.swift */; };
+		CD4BFAFD2969551400B09048 /* LEVEL1_LeeoCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BFAFC2969551400B09048 /* LEVEL1_LeeoCalculatorUITests.swift */; };
+		CD4BFAFF2969551400B09048 /* LEVEL1_LeeoCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BFAFE2969551400B09048 /* LEVEL1_LeeoCalculatorUITestsLaunchTests.swift */; };
+		CDD30803296BEC4000A76333 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD30802296BEC4000A76333 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD4BFAEF2969551400B09048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD4BFAD62969551200B09048 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD4BFADD2969551200B09048;
+			remoteInfo = "LEVEL1-LeeoCalculator";
+		};
+		CD4BFAF92969551400B09048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD4BFAD62969551200B09048 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD4BFADD2969551200B09048;
+			remoteInfo = "LEVEL1-LeeoCalculator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD4BFADE2969551200B09048 /* LEVEL1-LeeoCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LEVEL1-LeeoCalculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4BFAE12969551200B09048 /* LEVEL1_LeeoCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1_LeeoCalculatorApp.swift; sourceTree = "<group>"; };
+		CD4BFAE32969551200B09048 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD4BFAE52969551300B09048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD4BFAE82969551300B09048 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD4BFAEE2969551400B09048 /* LEVEL1-LeeoCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LEVEL1-LeeoCalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4BFAF22969551400B09048 /* LEVEL1_LeeoCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1_LeeoCalculatorTests.swift; sourceTree = "<group>"; };
+		CD4BFAF82969551400B09048 /* LEVEL1-LeeoCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LEVEL1-LeeoCalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4BFAFC2969551400B09048 /* LEVEL1_LeeoCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1_LeeoCalculatorUITests.swift; sourceTree = "<group>"; };
+		CD4BFAFE2969551400B09048 /* LEVEL1_LeeoCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1_LeeoCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDD30802296BEC4000A76333 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD4BFADB2969551200B09048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4BFAEB2969551400B09048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4BFAF52969551400B09048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD4BFAD52969551200B09048 = {
+			isa = PBXGroup;
+			children = (
+				CD4BFAE02969551200B09048 /* LEVEL1-LeeoCalculator */,
+				CD4BFAF12969551400B09048 /* LEVEL1-LeeoCalculatorTests */,
+				CD4BFAFB2969551400B09048 /* LEVEL1-LeeoCalculatorUITests */,
+				CD4BFADF2969551200B09048 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD4BFADF2969551200B09048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BFADE2969551200B09048 /* LEVEL1-LeeoCalculator.app */,
+				CD4BFAEE2969551400B09048 /* LEVEL1-LeeoCalculatorTests.xctest */,
+				CD4BFAF82969551400B09048 /* LEVEL1-LeeoCalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD4BFAE02969551200B09048 /* LEVEL1-LeeoCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				CDD30802296BEC4000A76333 /* Constants.swift */,
+				CD4BFAE12969551200B09048 /* LEVEL1_LeeoCalculatorApp.swift */,
+				CD4BFAE32969551200B09048 /* ContentView.swift */,
+				CD4BFAE52969551300B09048 /* Assets.xcassets */,
+				CD4BFAE72969551300B09048 /* Preview Content */,
+			);
+			path = "LEVEL1-LeeoCalculator";
+			sourceTree = "<group>";
+		};
+		CD4BFAE72969551300B09048 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BFAE82969551300B09048 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD4BFAF12969551400B09048 /* LEVEL1-LeeoCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BFAF22969551400B09048 /* LEVEL1_LeeoCalculatorTests.swift */,
+			);
+			path = "LEVEL1-LeeoCalculatorTests";
+			sourceTree = "<group>";
+		};
+		CD4BFAFB2969551400B09048 /* LEVEL1-LeeoCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BFAFC2969551400B09048 /* LEVEL1_LeeoCalculatorUITests.swift */,
+				CD4BFAFE2969551400B09048 /* LEVEL1_LeeoCalculatorUITestsLaunchTests.swift */,
+			);
+			path = "LEVEL1-LeeoCalculatorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD4BFADD2969551200B09048 /* LEVEL1-LeeoCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD4BFB022969551400B09048 /* Build configuration list for PBXNativeTarget "LEVEL1-LeeoCalculator" */;
+			buildPhases = (
+				CD4BFADA2969551200B09048 /* Sources */,
+				CD4BFADB2969551200B09048 /* Frameworks */,
+				CD4BFADC2969551200B09048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LEVEL1-LeeoCalculator";
+			productName = "LEVEL1-LeeoCalculator";
+			productReference = CD4BFADE2969551200B09048 /* LEVEL1-LeeoCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD4BFAED2969551400B09048 /* LEVEL1-LeeoCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD4BFB052969551400B09048 /* Build configuration list for PBXNativeTarget "LEVEL1-LeeoCalculatorTests" */;
+			buildPhases = (
+				CD4BFAEA2969551400B09048 /* Sources */,
+				CD4BFAEB2969551400B09048 /* Frameworks */,
+				CD4BFAEC2969551400B09048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD4BFAF02969551400B09048 /* PBXTargetDependency */,
+			);
+			name = "LEVEL1-LeeoCalculatorTests";
+			productName = "LEVEL1-LeeoCalculatorTests";
+			productReference = CD4BFAEE2969551400B09048 /* LEVEL1-LeeoCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD4BFAF72969551400B09048 /* LEVEL1-LeeoCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD4BFB082969551400B09048 /* Build configuration list for PBXNativeTarget "LEVEL1-LeeoCalculatorUITests" */;
+			buildPhases = (
+				CD4BFAF42969551400B09048 /* Sources */,
+				CD4BFAF52969551400B09048 /* Frameworks */,
+				CD4BFAF62969551400B09048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD4BFAFA2969551400B09048 /* PBXTargetDependency */,
+			);
+			name = "LEVEL1-LeeoCalculatorUITests";
+			productName = "LEVEL1-LeeoCalculatorUITests";
+			productReference = CD4BFAF82969551400B09048 /* LEVEL1-LeeoCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD4BFAD62969551200B09048 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CD4BFADD2969551200B09048 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					CD4BFAED2969551400B09048 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CD4BFADD2969551200B09048;
+					};
+					CD4BFAF72969551400B09048 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CD4BFADD2969551200B09048;
+					};
+				};
+			};
+			buildConfigurationList = CD4BFAD92969551200B09048 /* Build configuration list for PBXProject "LEVEL1-LeeoCalculator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD4BFAD52969551200B09048;
+			productRefGroup = CD4BFADF2969551200B09048 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD4BFADD2969551200B09048 /* LEVEL1-LeeoCalculator */,
+				CD4BFAED2969551400B09048 /* LEVEL1-LeeoCalculatorTests */,
+				CD4BFAF72969551400B09048 /* LEVEL1-LeeoCalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD4BFADC2969551200B09048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4BFAE92969551300B09048 /* Preview Assets.xcassets in Resources */,
+				CD4BFAE62969551300B09048 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4BFAEC2969551400B09048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4BFAF62969551400B09048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD4BFADA2969551200B09048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4BFAE42969551200B09048 /* ContentView.swift in Sources */,
+				CD4BFAE22969551200B09048 /* LEVEL1_LeeoCalculatorApp.swift in Sources */,
+				CDD30803296BEC4000A76333 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4BFAEA2969551400B09048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4BFAF32969551400B09048 /* LEVEL1_LeeoCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4BFAF42969551400B09048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4BFAFF2969551400B09048 /* LEVEL1_LeeoCalculatorUITestsLaunchTests.swift in Sources */,
+				CD4BFAFD2969551400B09048 /* LEVEL1_LeeoCalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD4BFAF02969551400B09048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD4BFADD2969551200B09048 /* LEVEL1-LeeoCalculator */;
+			targetProxy = CD4BFAEF2969551400B09048 /* PBXContainerItemProxy */;
+		};
+		CD4BFAFA2969551400B09048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD4BFADD2969551200B09048 /* LEVEL1-LeeoCalculator */;
+			targetProxy = CD4BFAF92969551400B09048 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CD4BFB002969551400B09048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD4BFB012969551400B09048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD4BFB032969551400B09048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LEVEL1-LeeoCalculator/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "woowon-level1.LEVEL1-LeeoCalculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD4BFB042969551400B09048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LEVEL1-LeeoCalculator/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "woowon-level1.LEVEL1-LeeoCalculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD4BFB062969551400B09048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "woowon-level1.LEVEL1-LeeoCalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEVEL1-LeeoCalculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LEVEL1-LeeoCalculator";
+			};
+			name = Debug;
+		};
+		CD4BFB072969551400B09048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "woowon-level1.LEVEL1-LeeoCalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEVEL1-LeeoCalculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LEVEL1-LeeoCalculator";
+			};
+			name = Release;
+		};
+		CD4BFB092969551400B09048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "woowon-level1.LEVEL1-LeeoCalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "LEVEL1-LeeoCalculator";
+			};
+			name = Debug;
+		};
+		CD4BFB0A2969551400B09048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "woowon-level1.LEVEL1-LeeoCalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "LEVEL1-LeeoCalculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD4BFAD92969551200B09048 /* Build configuration list for PBXProject "LEVEL1-LeeoCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4BFB002969551400B09048 /* Debug */,
+				CD4BFB012969551400B09048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD4BFB022969551400B09048 /* Build configuration list for PBXNativeTarget "LEVEL1-LeeoCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4BFB032969551400B09048 /* Debug */,
+				CD4BFB042969551400B09048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD4BFB052969551400B09048 /* Build configuration list for PBXNativeTarget "LEVEL1-LeeoCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4BFB062969551400B09048 /* Debug */,
+				CD4BFB072969551400B09048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD4BFB082969551400B09048 /* Build configuration list for PBXNativeTarget "LEVEL1-LeeoCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4BFB092969551400B09048 /* Debug */,
+				CD4BFB0A2969551400B09048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD4BFAD62969551200B09048 /* Project object */;
+}
