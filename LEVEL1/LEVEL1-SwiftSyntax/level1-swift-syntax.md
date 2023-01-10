@@ -1,6 +1,6 @@
 # LEVEL1 SwiftUI로 배우는 Swift 문법의 기초
 
-## 변수
+## 1, 2 변수
 
 ```swift
 let name = "Woowon"
@@ -36,7 +36,7 @@ let age: Int = 23
 
 <br>
 
-## 연산자
+## 3. 연산자
 - 대입 연산자
 - 사칙 연산자
 - 비교 연산자
@@ -80,7 +80,7 @@ Text("\(num1 < num2)".description)  // true
 
 <br>
 
-## 여러개의 변수를 모아서 쓰는 콜렉션 타입
+## 4. 여러개의 변수를 모아서 쓰는 콜렉션 타입
  
 ### Array (배열)
 - repeating 메소드와 count 메소드를 이용해 기본 값으로 빈 배열을 생성할 수 있다.
@@ -122,6 +122,123 @@ Text(animals1.union(animals2).description)
 // 중복 값은 사라지는 것으로 보인다.
 ```
 
+<br>
+
+## 5. 조건을 가지고 분기를 하는 조건문
+```swift
+if condition {
+    code
+} else {
+
+}
+
+var randomNumber: Int = 3
+    
+    var body: some View {
+        VStack {
+            if randomNumber % 2 == 0 {
+                Text("짝수")
+            } else {
+                Text("홀수")
+            }
+        }
+        .padding()
+    }
+```
+
+<br>
+
+## 6. 같은 것을 반복해주는 반복문
+```swift
+let farmAnimals = ["🐴", "🐮", "🐷", "🐑"]
+    
+    var body: some View {
+        VStack {
+            ForEach(farmAnimals,
+                    id: \.self) { animal in
+                 Text(animal)
+            }
+        }
+        .padding()
+    }
+```
+
+```swift
+ForEach(0 ..< 5) { number in
+    Text(number.description)
+}
+
+// 0
+// 1
+// 2
+// 3
+// 4
+
+
+// 범위 출력
+ForEach(0 ..< 5) { number in
+    Text(farmAnimals[number])
+}
+
+
+// 전체 출력
+ForEach(farmAnimals, id: \.self) { s in
+    Text(s)
+}
+```
+
+<br>
+
+
+## 7. func, 코드를 따로 뺄 수 있도록 해주는 함수
+```swift
+Text(myMind)
+Button {
+    isChangedMind.toggle()
+    myMind = getMind(with: isChangedMind)
+} label: {
+    Text("Change my mind!")
+}
+
+func getMind(with isChangedMind: Bool) -> String {  
+    if isChangedMind {
+        return "always open"
+    } else {
+        return "but closed"
+    }
+}
+```
+- func getMind 함수에서
+- with isChangedMind의 isChangedMind는 받아온 값을 저장한 변수이다.
+
+<br>
+
+## 8. enum, 선택지를 만들어주는 열거형
+```swift
+enum Big4 {
+    case Djokovic
+    case Nadal
+    case Federer
+    case Murray
+}
+
+```
+
+<br>
+
+## 9. switch, 케이스의 패턴으로 나눠주는 스위치
+```swift
+switch menu {
+case .Beef :
+    Text("오늘 메뉴는 🐮")
+case .Pork :
+    Text("오늘 메뉴는 🐷")
+case .Chicken :
+    Text("오늘 메뉴는 🍗")
+default:
+    Text("이건 못먹어요")
+}
+```
 
 <br>
 
