@@ -14,6 +14,8 @@
 		CD9D67C7296D2E84007615B4 /* LEVEL1_KeypadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D67C6296D2E84007615B4 /* LEVEL1_KeypadTests.swift */; };
 		CD9D67D1296D2E84007615B4 /* LEVEL1_KeypadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D67D0296D2E84007615B4 /* LEVEL1_KeypadUITests.swift */; };
 		CD9D67D3296D2E84007615B4 /* LEVEL1_KeypadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D67D2296D2E84007615B4 /* LEVEL1_KeypadUITestsLaunchTests.swift */; };
+		CDB25F84296D476700F5D149 /* DialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB25F83296D476700F5D149 /* DialButton.swift */; };
+		CDB25F86296D4CE300F5D149 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB25F85296D4CE300F5D149 /* Dial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CD9D67CC296D2E84007615B4 /* LEVEL1-KeypadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LEVEL1-KeypadUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D67D0296D2E84007615B4 /* LEVEL1_KeypadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1_KeypadUITests.swift; sourceTree = "<group>"; };
 		CD9D67D2296D2E84007615B4 /* LEVEL1_KeypadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1_KeypadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDB25F83296D476700F5D149 /* DialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialButton.swift; sourceTree = "<group>"; };
+		CDB25F85296D4CE300F5D149 /* Dial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				CD9D67B5296D2E83007615B4 /* LEVEL1_KeypadApp.swift */,
 				CD9D67B7296D2E83007615B4 /* ContentView.swift */,
+				CDB25F83296D476700F5D149 /* DialButton.swift */,
+				CDB25F85296D4CE300F5D149 /* Dial.swift */,
 				CD9D67B9296D2E84007615B4 /* Assets.xcassets */,
 				CD9D67BB296D2E84007615B4 /* Preview Content */,
 			);
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9D67B8296D2E83007615B4 /* ContentView.swift in Sources */,
+				CDB25F84296D476700F5D149 /* DialButton.swift in Sources */,
 				CD9D67B6296D2E83007615B4 /* LEVEL1_KeypadApp.swift in Sources */,
+				CDB25F86296D4CE300F5D149 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
