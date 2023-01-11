@@ -9,31 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var inputNumber: String = ""
+    
     var body: some View {
         VStack {
-            HStack {
-                ForEach(dialDummy[0...2], id: \.self) { item in
-                    DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet))
+            if inputNumber != "" {
+                Button {
+                    inputNumber.removeLast()
+                } label: {
+                    Text("Delete")
                 }
             }
-            HStack {
-                ForEach(dialDummy[3...5], id: \.self) { item in
-                    DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet))
+            
+            Spacer()
+            VStack {
+                Text(inputNumber)
+                    .font(.system(size: 32))
+                    .padding(.vertical, 10)
+                if inputNumber != "" {
+                    Text("Add Number")
+                        .foregroundColor(.blue)
                 }
             }
-            HStack {
-                ForEach(dialDummy[6...8], id: \.self) { item in
-                    DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet))
-                }
-            }
-            HStack {
-                ForEach(dialDummy[9...11], id: \.self) { item in
-                    DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet))
-                }
-            }
-            HStack {
-                ForEach(dialDummy.suffix(1), id: \.self) { item in
-                    DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet))
+            .frame(height: 200)
+            
+            Spacer()
+            ForEach(dialDummy, id: \.self) { items in
+                HStack {
+                    ForEach(items, id: \.self) { item in
+                        DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonColor: item.buttonColor, inputNumber: $inputNumber )
+                    }
                 }
             }
             
