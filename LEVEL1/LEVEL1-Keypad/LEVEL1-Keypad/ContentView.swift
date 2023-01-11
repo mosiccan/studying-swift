@@ -13,14 +13,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            if inputNumber != "" {
-                Button {
-                    inputNumber.removeLast()
-                } label: {
-                    Text("Delete")
-                }
-            }
-            
             Spacer()
             VStack {
                 Text(inputNumber)
