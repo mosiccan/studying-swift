@@ -13,16 +13,10 @@ struct DialButton: View {
     let buttonColor: Color?
     @Binding var inputNumber: String
     
+    
     var body: some View {
         Button {
-            if dialNumber.mainNumber != "Phone",
-               dialNumber.mainNumber != "Delete" {
-                inputNumber += dialNumber.mainNumber
-            } else if dialNumber.mainNumber == "Delete" {
-                inputNumber = String(inputNumber.dropLast())
-            }
-                
-                
+            
         } label: {
             VStack(spacing: 0) {
                 // mainNumber
@@ -56,6 +50,24 @@ struct DialButton: View {
             .background(buttonColor)
             .clipShape(Circle())
         }
+        .simultaneousGesture(LongPressGesture()
+            .onEnded { _ in // 길게 누를때 gesture
+                if dialNumber.mainNumber == "0" {
+                    self.inputNumber += "+"
+                } else if dialNumber.mainNumber != "Phone",
+                          dialNumber.mainNumber != "Delete" {
+                    inputNumber += dialNumber.mainNumber
+                }
+            })
+        .simultaneousGesture(TapGesture()
+            .onEnded({ _ in // 짧게 누를때 gesture
+                if dialNumber.mainNumber != "Phone",
+                   dialNumber.mainNumber != "Delete" {
+                    inputNumber += dialNumber.mainNumber
+                } else if dialNumber.mainNumber == "Delete" {
+                    inputNumber = String(inputNumber.dropLast())
+                }
+            }))
         .padding(.all, 6)
     }
 }

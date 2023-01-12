@@ -346,3 +346,101 @@ if inputNumber != "" {
 }
 ```
 - ```Add Number```가 추가 됐던 로직대로 만들어 보았다.
+
+<br>
+
+## 길게 누르기
+- 한가지의 버튼에 2가지의 제스처가 들어간다!
+```swift
+// DialButton
+
+.simultaneousGesture(LongPressGesture()
+            .onEnded { _ in // 길게 누를때 gesture
+                if dialNumber.mainNumber == "0" {
+                    self.inputNumber += "+"
+                } else if dialNumber.mainNumber != "Phone",
+                          dialNumber.mainNumber != "Delete" {
+                    inputNumber += dialNumber.mainNumber
+                }
+            })
+.simultaneousGesture(TapGesture()
+            .onEnded({ _ in // 짧게 누를때 gesture
+                if dialNumber.mainNumber != "Phone",
+                   dialNumber.mainNumber != "Delete" {
+                    inputNumber += dialNumber.mainNumber
+                } else if dialNumber.mainNumber == "Delete" {
+                    inputNumber = String(inputNumber.dropLast())
+                }
+            }))
+        .padding(.all, 6)
+```
+- 여기까지 우선 기능 구현 먼저!
+
+
+<br>
+
+## 앱 돌아보기
+### ContentView 함수화
+```swift
+VStack {
+            Spacer()
+            numberLabelView()
+            Spacer()
+            keypadDialView()
+            Spacer()
+}
+
+fileprivate func numberLabelView() -> some View {
+    return VStack {
+        Text(inputNumber)
+            .font(.system(size: 32))
+            .padding(.vertical, 10)
+        if !inputNumber.isEmpty {
+            Text("Add Number")
+                .foregroundColor(.blue)
+        }
+    }
+    .frame(height: 200)
+}
+
+fileprivate func keypadDialView() -> ForEach<[[Dial]], [Dial], HStack<ForEach<[Dial], Dial, DialButton>>> {
+    return ForEach(dialDummy, id: \.self) { items in
+        HStack {
+            ForEach(items, id: \.self) { item in
+                DialButton(dialNumber: Dial(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonColor: item.buttonColor, inputNumber: $inputNumber )
+            }
+        }
+    }
+}
+```
+- 함수화 할 수 있는 영역을 드래그 후 "우클릭-Refactor-Extract to Method"를 거쳐 함수화가 가능하다.
+
+### 추가해볼 수 있는 기능들
+- Add Button 눌렀을 때 Create New Contact, Add tp Existing Contact가 뜬다.
+- numberLabelView에 규칙을 넣어본다.
+  - > ex) 번호 입력시 '-'를 추가한다. 특정 수 이상 넘어가면 '-'가 사라진다 등등
+- numberLabelView를 누르면 copy/paste 버튼이 뜬다.
+  - 입력된 값이 없을 때 누르면 paste 버튼만 뜬다.
+- 전화 버튼 이미지 배치 정중앙에 하기
+- Add Number, 지우기 버튼 fade in, out 애니메이션
+- 지우기 버튼을 꾹 누르고 있으면 하나씩 빠르게 지워진다. (현재는 지워지지 않음)
+- 0을 누를때 현재는 꾹 누르면 바로 +가 입력되지만 실제 앱에선 0에서 +로 바뀐다.
+- 등등
+
+<br>
+
+## 키패드앱 - 과제
+- 잠금화면 구현하기
+### 구현 포인트 (리이오님의 요구사항)
+- 버튼 background가 blur 처리로 뒤에 있는 배경에 따라 blur 효과가 적용된다.
+- 0만 정중앙
+- 번호를 입력할 때 위에 있는 빈 원이 찬다. 
+- 비밀번호 전부 입력 후 값이 틀리면 
+  - 원들이 흔들림
+  - 다시 빈 원으로 돌아옴(초기화)
+- 번호 입력 삭제기능, 채워진 원이 하나씩 비워짐
+- 비밀번호 통과시 압호입력 화면 사라짐, 자물쇠가 열리는 애니메이션
+### 구현 순서
+- 화면 그리기
+- 기능 구현
+  - 암호의 판별

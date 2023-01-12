@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct  Dial: Identifiable, Hashable {
-    var id = UUID()
+    var id = UUID() // 반복문을 돌리기 위해 채택 
     var mainNumber: String
     var subAlphabet: [String]
     var buttonColor: Color? = .gray
