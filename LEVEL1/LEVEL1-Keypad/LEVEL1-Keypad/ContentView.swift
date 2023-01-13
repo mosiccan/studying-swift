@@ -17,8 +17,20 @@ struct ContentView: View {
                 .font(.system(size: 32))
                 .padding(.vertical, 10)
             if !inputNumber.isEmpty {
-                Text("Add Number")
-                    .foregroundColor(.blue)
+                Menu("Add Button") {
+                    Button {
+                        
+                    } label: {
+                        Text("Create New Contact")
+                        Image(systemName: "person.crop.circle")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Text("Add to Existing Contact")
+                        Image(systemName: "person.crop.circle.fill.badge.plus")
+                    }
+                }
             }
         }
         .frame(height: 200)
