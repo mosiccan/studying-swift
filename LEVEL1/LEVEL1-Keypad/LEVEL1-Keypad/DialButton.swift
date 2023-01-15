@@ -12,7 +12,7 @@ struct DialButton: View {
     let dialNumber: Dial
     let buttonColor: Color?
     @Binding var inputNumber: String
-    
+    // let regex = "^01[0-1, 7][0-9]{7,8}$"
     
     var body: some View {
         Button {
@@ -32,7 +32,7 @@ struct DialButton: View {
                         .frame(width: 30)
                         .foregroundColor(.gray)
                 } else {
-                    Text(dialNumber.mainNumber)
+                    Text(dialNumber.mainNumber) // 여기서 숫자 입력이 들어감
                         .font(.system(.title))
                         .padding(.vertical, -3)
                 }
