@@ -12,7 +12,6 @@ struct DialButton: View {
     let dialNumber: Dial
     let buttonColor: Color?
     @Binding var inputNumber: String
-    // let regex = "^01[0-1, 7][0-9]{7,8}$"
     
     var body: some View {
         Button {
@@ -23,7 +22,10 @@ struct DialButton: View {
                 if dialNumber.mainNumber == "Phone" {
                     Image(systemName: "phone.fill")
                         .resizable()
-                        .aspectRatio(1, contentMode: .fill).frame(width: 30, height: 30)
+                        //.aspectRatio(1, contentMode: .fill).frame(width: 30, height: 30)
+                        .imageScale(.large)
+                        .frame(width: 30, height: 30)
+    
                 } else if dialNumber.mainNumber == "Delete",
                           inputNumber != "" {
                     Image(systemName: "delete.left.fill")
@@ -39,9 +41,12 @@ struct DialButton: View {
                 // subAlphabet
                 HStack(spacing: 3 ) {
                     ForEach(dialNumber.subAlphabet, id: \.self ) { item in
-                        Text(item)
-                            .font(.system(size: 11))
-                            .bold()
+                        if dialNumber.mainNumber == "Phone" && item.isEmpty {}
+                        else {
+                            Text(item)
+                                .font(.system(size: 11))
+                                .bold()
+                        }
                     }
                 }
             }

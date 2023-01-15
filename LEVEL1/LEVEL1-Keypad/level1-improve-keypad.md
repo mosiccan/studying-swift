@@ -6,7 +6,7 @@
   - > ex) 번호 입력시 '-'를 추가한다. 특정 수 이상 넘어가면 '-'가 사라진다 등등
 - numberLabelView를 누르면 copy/paste 버튼이 뜬다.
   - 입력된 값이 없을 때 누르면 paste 버튼만 뜬다.
-- 전화 버튼 이미지 배치 정중앙에 하기
+- 버튼에서 전화버튼 이미지만 배치 정중앙에 하기 ✅
 - Add Number, 지우기 버튼 fade in, out 애니메이션
 - 지우기 버튼을 꾹 누르고 있으면 하나씩 빠르게 지워진다. (현재는 지워지지 않음)
 - 0을 누를때 현재는 꾹 누르면 바로 +가 입력되지만 실제 앱에선 0에서 +로 바뀐다.
@@ -142,3 +142,33 @@ extension String {
 - 이 경우 0101 입력 시 010-1이 아닌 0101이 입력되며
 - 10자리수 부터 010-111-1111으로 표기된다.
 - 010의 경우 4자리부터는 -를 붙이게끔 수정해보자
+
+<br>
+
+### numberLabelView를 누르면 copy/paste 버튼이 뜬다.
+```swift
+```
+- text에 ```.textSelection(.enabled)```를 적용시켰지만 조금 다르다.
+  - 짧게 tap만 해도 떠야 하며, copy, paste 창이 아래에 떠야한다.
+- TextField도 아닌 것 같다. 
+  - keypad앱은 드래그 해서 원하는 만큼 복사할 수 없다.
+- 아직은 내 서치력으로 원하는 결과물을 찾지 못했다...
+
+<br>
+
+### 전화 버튼 이미지만 버튼 정중앙에 배치하기
+```swift
+HStack(spacing: 3 ) {
+    ForEach(dialNumber.subAlphabet, id: \.self ) { item in
+        if dialNumber.mainNumber == "Phone" && item.isEmpty {}
+        else {
+            Text(item)
+                .font(.system(size: 11))
+                .bold()
+        }
+    }
+}
+```
+- 위 코드는 subAlphabet 출력 부분으로
+- dialNumber.mainNumber == "Phone" && item.isEmpty 일땐 그냥 냅두고
+- 나머지 경우에만 출력해주면 된다.
