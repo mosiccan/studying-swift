@@ -31,6 +31,11 @@ struct DialButton: View {
                         .scaledToFit()
                         .frame(width: 30)
                         .foregroundColor(.gray)
+                    
+                } else if dialNumber.mainNumber == "#" {
+                    Text(dialNumber.mainNumber)
+                        .scaledToFit()
+                        .font(.system(size: 36, weight: .bold, design: .serif))
                 } else {
                     if dialNumber.mainNumber == "*" {
                         Spacer()
