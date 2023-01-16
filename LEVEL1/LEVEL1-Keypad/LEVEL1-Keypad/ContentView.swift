@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var inputNumber: String = ""
+    @State var isButtonVisible: Bool = true
     
     fileprivate func numberLabelView() -> some View {
         return VStack {
@@ -20,7 +21,6 @@ struct ContentView: View {
             if !inputNumber.isEmpty {
                 Menu("Add Button") {
                     Button {
-                        
                     } label: {
                         Text("Create New Contact")
                         Image(systemName: "person.crop.circle")

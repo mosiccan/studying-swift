@@ -22,26 +22,33 @@ struct DialButton: View {
                 if dialNumber.mainNumber == "Phone" {
                     Image(systemName: "phone.fill")
                         .resizable()
-                        //.aspectRatio(1, contentMode: .fill).frame(width: 30, height: 30)
                         .imageScale(.large)
                         .frame(width: 30, height: 30)
     
-                } else if dialNumber.mainNumber == "Delete",
-                          inputNumber != "" {
+                }  else if dialNumber.mainNumber == "Delete" {
                     Image(systemName: "delete.left.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30)
                         .foregroundColor(.gray)
                 } else {
-                    Text(dialNumber.mainNumber) // 여기서 숫자 입력이 들어감
-                        .font(.system(.title))
-                        .padding(.vertical, -3)
+                    if dialNumber.mainNumber == "*" {
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Text(dialNumber.mainNumber)
+                            .scaledToFit()
+                            .font(.system(size: 64))
+                    } else {
+                        Text(dialNumber.mainNumber) // 여기서 숫자 입력이 들어감
+                            .font(.system(.largeTitle))
+                            .padding(.vertical, -3)
+                    }
                 }
                 // subAlphabet
                 HStack(spacing: 3 ) {
                     ForEach(dialNumber.subAlphabet, id: \.self ) { item in
-                        if dialNumber.mainNumber == "Phone" && item.isEmpty {}
+                        if ((dialNumber.mainNumber == "*" || dialNumber.mainNumber == "Phone" || dialNumber.mainNumber == "#" || dialNumber.mainNumber == "Delete" ) && item.isEmpty) {}
                         else {
                             Text(item)
                                 .font(.system(size: 11))
@@ -51,7 +58,7 @@ struct DialButton: View {
                 }
             }
             .foregroundColor(.white)
-            .frame(width: 65, height: 65)
+            .frame(width: 80, height: 80)
             .background(buttonColor)
             .clipShape(Circle())
         }
