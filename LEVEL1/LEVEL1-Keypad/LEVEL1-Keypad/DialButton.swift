@@ -67,6 +67,15 @@ struct DialButton: View {
             .background(buttonColor)
             .clipShape(Circle())
         }
+        .highPriorityGesture(TapGesture()
+            .onEnded({ _ in // 짧게 누를때 gesture
+                if dialNumber.mainNumber != "Phone",
+                   dialNumber.mainNumber != "Delete" {
+                    inputNumber += dialNumber.mainNumber
+                } else if dialNumber.mainNumber == "Delete" {
+                    inputNumber = String(inputNumber.dropLast())
+                }
+            }))
         .simultaneousGesture(LongPressGesture()
             .onEnded { _ in // 길게 누를때 gesture
                 if dialNumber.mainNumber == "0" {
@@ -76,15 +85,7 @@ struct DialButton: View {
                     inputNumber += dialNumber.mainNumber
                 }
             })
-        .simultaneousGesture(TapGesture()
-            .onEnded({ _ in // 짧게 누를때 gesture
-                if dialNumber.mainNumber != "Phone",
-                   dialNumber.mainNumber != "Delete" {
-                    inputNumber += dialNumber.mainNumber
-                } else if dialNumber.mainNumber == "Delete" {
-                    inputNumber = String(inputNumber.dropLast())
-                }
-            }))
+        
         .padding(.all, 6)
     }
 }

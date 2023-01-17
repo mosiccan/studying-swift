@@ -11,15 +11,16 @@ struct ContentView: View {
     
     @State var inputNumber: String = ""
     @State var isButtonVisible: Bool = true
+    @State private var isButtonPressed: Bool = false
     
     fileprivate func numberLabelView() -> some View {
         return VStack {
             Text(inputNumber)   // 사용자가 입력한 숫자를 화면에 뿌려줌
-                .font(.system(size: 32))
-                .padding(.vertical, 10)
+                    .font(.system(size: 32))
+                    .padding(.vertical, 10)
             
             if !inputNumber.isEmpty {
-                Menu("Add Button") {
+                Menu("Add Number") {
                     Button {
                     } label: {
                         Text("Create New Contact")
@@ -31,7 +32,7 @@ struct ContentView: View {
                         Text("Add to Existing Contact")
                         Image(systemName: "person.crop.circle.fill.badge.plus")
                     }
-                }
+                }.font(.system(size: 19))
             }
         }
         .frame(height: 200)
