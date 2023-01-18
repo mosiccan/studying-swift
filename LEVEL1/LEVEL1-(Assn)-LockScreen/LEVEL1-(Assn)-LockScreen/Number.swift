@@ -12,6 +12,15 @@ struct Number: Identifiable, Hashable {
     var id = UUID()
     var mainNumber: String
     var subAlphabet: [String]
+    var buttonMaterial: Material? = .ultraThin
+    
+    static func == (lhs: Number, rhs: Number) -> Bool {
+        return lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
 }
 
 var numberDummy = [[Number(mainNumber: "1", subAlphabet: [""]),
@@ -23,7 +32,7 @@ var numberDummy = [[Number(mainNumber: "1", subAlphabet: [""]),
                    [Number(mainNumber: "7", subAlphabet: ["P","Q","R","S"]),
                     Number(mainNumber: "8", subAlphabet: ["T","U","V"]),
                     Number(mainNumber: "9", subAlphabet: ["W","X","Y","Z"])],
-                   [Number(mainNumber: "", subAlphabet: [""]),
+                   [Number(mainNumber: "", subAlphabet: [""], buttonMaterial: nil),
                     Number(mainNumber: "0", subAlphabet: [""]),
-                    Number(mainNumber: "", subAlphabet: [""])],
+                    Number(mainNumber: "", subAlphabet: [""], buttonMaterial: nil)],
 ]

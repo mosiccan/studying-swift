@@ -16,20 +16,61 @@ struct ContentView: View {
                 .frame(width: 420)
                 .blur(radius: 10)
             
-            VStack(spacing: 0) {
+            VStack(spacing: 18) {
                 Spacer()
-                ForEach(numberDummy, id: \.self) { items in
-                    HStack {
-                        ForEach(items, id: \.self){ item in
-                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet))}
+                // lock 이미지
+                Image(systemName: "lock.fill")
+                    .foregroundColor(.white)
+                
+                Spacer()
+                Text("Enter Passcode")
+                    .foregroundColor(.white)
+                    .font(.title3)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                HStack(spacing: 24) {
+                    ForEach(0..<6) { _ in
+                        Image(systemName: "circle")
+                            .resizable()
+                            .frame(width: 13, height: 13)
                     }
                 }
+                .foregroundColor(.white)
+                
+                Spacer()
+                // Number 버튼 출력
+                ForEach(numberDummy, id: \.self) { items in
+                    HStack (spacing: 20) {
+                        ForEach(items, id: \.self) { item in
+                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial)
+                        }
+                    }
+                }
+                
+                Spacer()
+                // Emergency, Cancel(Delete)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // emergency action
+                    }) {
+                        Text("Emergency")
+                            .font(.system(.body))
+                    }
+                    Spacer(minLength: 144)
+                    Button(action: {
+                        // delete action
+                    }) {
+                        Text("Cancel")
+                            .font(.system(.body))
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal)
+                .foregroundColor(.white)
                 Spacer()
             }
             
         }
-        
-        
     }
 }
 

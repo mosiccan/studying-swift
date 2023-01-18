@@ -14,9 +14,9 @@
 		CD4CB0FD297540930010613D /* LEVEL1__Assn__LockScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB0FC297540930010613D /* LEVEL1__Assn__LockScreenTests.swift */; };
 		CD4CB107297540930010613D /* LEVEL1__Assn__LockScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB106297540930010613D /* LEVEL1__Assn__LockScreenUITests.swift */; };
 		CD4CB109297540930010613D /* LEVEL1__Assn__LockScreenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB108297540930010613D /* LEVEL1__Assn__LockScreenUITestsLaunchTests.swift */; };
+		CD5AE69E2977BC53007AA385 /* iPhone-14-Pro-Silver-wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5AE69D2977BC53007AA385 /* iPhone-14-Pro-Silver-wallpaper.png */; };
 		CD9600D22976A49900BEDC01 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9600D12976A49900BEDC01 /* Number.swift */; };
 		CD9600D42976A8E800BEDC01 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9600D32976A8E800BEDC01 /* NumberButton.swift */; };
-		CD9600D62976ACBA00BEDC01 /* iPhone-14-Pro-Silver-wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9600D52976ACBA00BEDC01 /* iPhone-14-Pro-Silver-wallpaper.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +47,9 @@
 		CD4CB102297540930010613D /* LEVEL1-(Assn)-LockScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LEVEL1-(Assn)-LockScreenUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4CB106297540930010613D /* LEVEL1__Assn__LockScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1__Assn__LockScreenUITests.swift; sourceTree = "<group>"; };
 		CD4CB108297540930010613D /* LEVEL1__Assn__LockScreenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL1__Assn__LockScreenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD5AE69D2977BC53007AA385 /* iPhone-14-Pro-Silver-wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone-14-Pro-Silver-wallpaper.png"; path = "../../../../../Desktop/iPhone-14-Pro-Silver-wallpaper.png"; sourceTree = "<group>"; };
 		CD9600D12976A49900BEDC01 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		CD9600D32976A8E800BEDC01 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
-		CD9600D52976ACBA00BEDC01 /* iPhone-14-Pro-Silver-wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone-14-Pro-Silver-wallpaper.png"; path = "../../../../../Desktop/iPhone-14-Pro-Silver-wallpaper.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 				CD9600D12976A49900BEDC01 /* Number.swift */,
 				CD9600D32976A8E800BEDC01 /* NumberButton.swift */,
 				CD4CB0EF297540920010613D /* Assets.xcassets */,
-				CD9600D52976ACBA00BEDC01 /* iPhone-14-Pro-Silver-wallpaper.png */,
+				CD5AE69D2977BC53007AA385 /* iPhone-14-Pro-Silver-wallpaper.png */,
 				CD4CB0F1297540920010613D /* Preview Content */,
 			);
 			path = "LEVEL1-(Assn)-LockScreen";
@@ -240,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9600D62976ACBA00BEDC01 /* iPhone-14-Pro-Silver-wallpaper.png in Resources */,
+				CD5AE69E2977BC53007AA385 /* iPhone-14-Pro-Silver-wallpaper.png in Resources */,
 				CD4CB0F3297540920010613D /* Preview Assets.xcassets in Resources */,
 				CD4CB0F0297540920010613D /* Assets.xcassets in Resources */,
 			);
