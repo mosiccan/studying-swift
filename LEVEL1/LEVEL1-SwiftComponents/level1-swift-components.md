@@ -2,7 +2,7 @@
 
 <br>
 
-## Button
+## 1. Button
 - 일반적인 Button
 ```swift
 Button {
@@ -21,7 +21,7 @@ Button {
 
 <br>
 
-## Text
+## 2. Text
 ```swift
     Text("Wow")
 ```
@@ -43,7 +43,7 @@ Button {
 
 <br>
 
-## Image
+## 3. Image
 ```swift
     Image(name: String)
 ```
@@ -65,7 +65,7 @@ Button {
 
 <br>
 
-## Stack (VStack, HStack, ZStack )
+## 4. Stack (VStack, HStack, ZStack )
 ```swift
 // 수직으로 쌓기
     VStack {        
@@ -111,7 +111,7 @@ VStack(alignment: .trailing) {
 
 <br>
 
-## ScrollView
+## 5. ScrollView
 ```swift
 // 기본 세로 스크롤
     ScrollView {
@@ -163,7 +163,7 @@ ScrollView(.horizontal) {
 
 <br>
 
-## UITableView와 닮은 List로 리스트 만들기 
+## 6. UITableView와 닮은 List로 리스트 만들기 
 
 ```swift
 // List
@@ -214,3 +214,173 @@ struct ContentView: View {
     }
 }
 ```
+
+<br>
+
+## 7. List안에서 구역을 나눠주는 Section
+```swift
+List {
+    Section {
+        HStack {
+            Image(systemName: "crown.fill")
+            Text("Djokovic")
+        }
+        HStack {
+            Image(systemName: "crown.fill")
+            Text("Federer")
+        }
+        HStack {
+            Image(systemName: "crown.fill" )
+            Text("Nadal")
+        }
+    }
+   
+    Section {
+        HStack {
+            Image(systemName: "crown")
+            Text("Auger Aliassime")
+        }
+        HStack {
+            Image(systemName: "crown")
+            Text("Sinner")
+        }
+        HStack {
+            Image(systemName: "crown")
+            Text("Shapovalov")
+        }
+    }
+}
+```
+### header, footer
+```swift
+Section {
+    HStack {
+        Image(systemName: "crown.fill")
+        Text("Djokovic")
+    }
+    HStack {
+        Image(systemName: "crown.fill")
+        Text("Federer")
+    }
+    HStack {
+        Image(systemName: "crown.fill")
+        Text("Nadal")
+    }
+} header: {
+    Text("Big 4")
+} footer: {
+    Text("")
+}
+```
+- ```header```와 ```footer``` 를 정해줄 수 있다.
+- ```header```에 현재 Section의 이름 같은 값을 붙여주자.
+- 또한 대문자로 출력이 된다!  
+<br>  
+
+- ```footer```에는 상황에 따라 출처라던가, 현 섹션의 개수라던가 하는 값을 넣어주면 적당할 것 같다.
+
+<br>
+
+## 8. 컴포넌트 사이의 공간을 만들어주는 Spacer
+```swift
+VStack() {
+    Image(systemName: "crown.fill")
+    Spacer()
+    Text("Djokovic")
+}
+```
+- 적응성 있는 뷰를 생성하며 가능한 크게 공간을 만든다
+- 최대로 비율에 맞게 적응형으로 공간을 늘릴 수 있다.
+
+<br>
+
+## 9. 색상을 그려주는 Color
+```swift
+    Color(.green)
+
+    Color(.green).edgesIgnoringSafeArea(.bottom)
+    // .edgesIgnoringSafeArea를 통해 safe-area에도 그릴 수 있다.
+```
+- ```safe-area``` 부분을 제외하고 전부 해당 색으로 칠한다!
+
+<br>
+
+## 10. UI를 그릴 때는 View (간단)
+```swift
+struct ContentView: View {
+    var body: some View {
+        Text("Woowon")
+    }
+}
+    
+```
+- body가 존재한다.
+- View 타입에 맞는 형태만 넣을 수 있다.
+
+<br>
+
+## 11. 앱 화면을 다시 그리기 위한 상태 @State 
+```swift
+
+struct ContentView: View {
+    @State var name: String = ""
+
+    var body: some View {
+        VStack {
+            Text("Hi \(name)")
+                .font(.title)
+            Button {
+                name = "Woowon"
+            } label: {
+                Text("Click")
+            }
+        }
+    }
+}
+
+
+```
+### 왜 쓰는지
+- struct는 자료를 바꾸기 어렵다.
+- 바꿔주기 위해 @State를 사용한다.
+
+<br>
+
+## 12. View의 설정? 옵션? modifier에 대해 알아보자
+```swift
+    Image(systemName: "tennisball")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 100)
+            .foregroundColor(.green)
+```
+- Image아래 .resizable() 등 붙어있는 옵션들을 말한다. 
+- 각 modifier를 보면 부모에 해당하는 View를 다시 반환한다.
+
+<br>
+
+## 13. 컴포넌트 사이에 공간을 주는 padding
+```swift
+VStack {
+    Image(systemName: "tennisball")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100)
+                .foregroundColor(.green)
+                .padding(30)
+    Image(systemName: "tennisball")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100)
+                .foregroundColor(.green)
+}
+
+```
+- 수치를 넣으면 해당 값의 points만큼 간격을 만든다.
+- bottom, top등 원하는 위치에 넣을 수도 있다.
+- 만약 버튼을 만들었는데 padding을 지정한 영역만큼 버튼으로 인식하기에 이런 부분도 잘 고려를 해야한다.
+
+## 14. 컴포넌트의 사이즈를 잡아주는 frame
+```swift
+```
+- width, height를 각각 정해줄 수 있고 alignment도 가능하다.

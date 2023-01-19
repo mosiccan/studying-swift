@@ -14,20 +14,74 @@ struct Person: Identifiable {
 }
 
 struct ContentView: View {
+    @State var name: String = ""
     var body: some View {
         
-        let people: [Person] = [Person(name: "Djokovic", imageName: "crown"),
-                                Person(name: "Federer",imageName: "crown"),
-                                Person(name: "Nadal",imageName: "crown"),
-                                Person(name: "Nadal",imageName: "crown"),]
-        List(people) { person in
-            HStack {
-                Image(systemName: person.imageName)
-                Text(person.name)
-                
-            }
-             
+//        let people: [Person] = [Person(name: "Djokovic", imageName: "crown"),
+//                                Person(name: "Federer",imageName: "crown"),
+//                                Person(name: "Nadal",imageName: "crown"),
+//                                Person(name: "Nadal",imageName: "crown"),]
+         
+//        List {
+//            Section {
+//                HStack {
+//                    Image(systemName: "crown.fill")
+//                    Text("Djokovic")
+//                }
+//                HStack {
+//                    Image(systemName: "crown.fill")
+//                    Text("Federer")
+//                }
+//                HStack {
+//                    Image(systemName: "crown.fill")
+//                    Text("Nadal")
+//                }
+//                HStack {
+//                    Image(systemName: "crown.fill")
+//                    Text("Murray")
+//                }
+//            } header: {
+//                Text("Big 4")
+//            }
+//
+//
+//            Section {
+//                HStack {
+//                    Image(systemName: "crown")
+//                    Text("Auger Aliassime")
+//                }
+//                HStack {
+//                    Image(systemName: "crown")
+//                    Text("Sinner")
+//                }
+//                HStack {
+//                    Image(systemName: "crown")
+//                    Text("Shapovalov")
+//                }
+//            } header: {
+//                Text("Next Generation")
+//            } footer: {
+//                Text("내가 생각하는 3명")
+//            }
+//
+//
+//        }
+        VStack {
+            Image(systemName: "tennisball")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100)
+                .foregroundColor(.green )
+                .padding(20 )
+                .background(.black)
+            Image(systemName: "tennisball")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100)
+                .foregroundColor(.green )
         }
+       
+        
     }
 }
 
