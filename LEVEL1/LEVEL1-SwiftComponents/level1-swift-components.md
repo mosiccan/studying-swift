@@ -382,5 +382,9 @@ VStack {
 
 ## 14. 컴포넌트의 사이즈를 잡아주는 frame
 ```swift
+Image(systemName: "tennisball")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100)
 ```
 - width, height를 각각 정해줄 수 있고 alignment도 가능하다.
