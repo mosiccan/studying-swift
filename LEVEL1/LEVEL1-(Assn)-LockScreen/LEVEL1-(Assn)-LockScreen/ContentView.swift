@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var inputNumber: String = ""
+    
     var body: some View {
         ZStack{
             Image("iPhone-14-Pro-Silver-wallpaper")
@@ -27,11 +30,18 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .font(.title3)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                
                 HStack(spacing: 24) {
-                    ForEach(0..<6) { _ in
-                        Image(systemName: "circle")
-                            .resizable()
-                            .frame(width: 13, height: 13)
+                    ForEach(0..<6) { number in
+                        if inputNumber.count > number {
+                            Image(systemName: "circle.fill")
+                                .resizable()
+                                .frame(width: 13, height: 13)
+                        } else {
+                            Image(systemName: "circle")
+                                .resizable()
+                                .frame(width: 13, height: 13)
+                        }
                     }
                 }
                 .foregroundColor(.white)
@@ -41,7 +51,7 @@ struct ContentView: View {
                 ForEach(numberDummy, id: \.self) { items in
                     HStack (spacing: 20) {
                         ForEach(items, id: \.self) { item in
-                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial)
+                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial, inputNumber: $inputNumber)
                         }
                     }
                 }
