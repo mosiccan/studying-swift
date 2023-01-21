@@ -115,3 +115,30 @@ ForEach(0..<6) { number in
 - 버튼을 1번 눌렀을 때
   - count는 1이고 number값은 0이므로 ```"circle.fill"``` 출력
 - 비슷한 원리로 Cancel 버튼과 Delete 버튼 변환을 해주면 될 것 같다.
+
+<br>
+
+### delete를 누르면 하나씩 다시 circle로 돌아오기
+
+```swift
+Button(action: {
+    // delete action
+    if inputNumber.count > 0 {
+        isDeleteMode = true
+      }
+    if isDeleteMode == true {
+        inputNumber = String(inputNumber.dropLast())
+    }
+}) {
+    if inputNumber.count == 0 {
+        Text("Cancel")
+            .font(.system(.body))
+    } else if inputNumber.count > 0 {
+        Text("Delete")
+            .font(.system(.body))
+    }
+}
+```
+- ```inputNumber.count == 0```일 때 Cancel을 표시해주며
+- 0 이상일 때는 Delete를 보여준다.
+- Bool 타입 isDeleteMode 변수를 만들어서 Delete 상태임을 체크 후 true이면서 버튼이 눌렸을 때 ```dropLast()```로 하나씩 지워준다.

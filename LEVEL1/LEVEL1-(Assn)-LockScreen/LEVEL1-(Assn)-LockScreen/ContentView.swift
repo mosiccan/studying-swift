@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var inputNumber: String = ""
+    @State var isDeleteMode = false
     
     var body: some View {
         ZStack{
@@ -69,19 +70,33 @@ struct ContentView: View {
                     Spacer(minLength: 144)
                     Button(action: {
                         // delete action
+                        if inputNumber.count > 0 {
+                            isDeleteMode = true
+                          }
+                        if isDeleteMode == true {
+                            inputNumber = String(inputNumber.dropLast())
+                        }
                     }) {
-                        Text("Cancel")
-                            .font(.system(.body))
+                        if inputNumber.count == 0 {
+                            Text("Cancel")
+                                .font(.system(.body))
+                        } else if inputNumber.count > 0 {
+                            Text("Delete")
+                                .font(.system(.body))
+                        }
+
                     }
                     Spacer()
                 }
-                .padding(.horizontal)
-                .foregroundColor(.white)
                 Spacer()
             }
-            
+            .padding(.horizontal)
+            .foregroundColor(.white)
+            Spacer()
         }
+        
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

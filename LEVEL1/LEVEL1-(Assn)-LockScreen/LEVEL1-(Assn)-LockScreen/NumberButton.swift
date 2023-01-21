@@ -12,7 +12,6 @@ struct NumberButton: View {
     let number: Number
     let buttonMaterial: Material?
     @Binding var inputNumber: String
-    
     var body: some View {
         Button {
             inputNumber += number.mainNumber
