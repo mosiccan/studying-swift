@@ -3,10 +3,11 @@
 
 ## 구현해볼 기능들
 - 비밀번호를 잘 입력했을 때 Lock 이모지가 풀리면서 애니메이션!
-- 숫자 버튼이 눌리면 Cancel 버튼이 Delete로 변한다.
+- 숫자 버튼이 눌리면 Cancel 버튼이 Delete로 변한다.✅
 - 버튼을 누를 때 버튼 영역이 흰 배경으로 됐다가 돌아와야하는데 현재는 material 효과가 어둡게 됐다가 돌아온다.
-- 숫자 버튼을 누를 때 circle들이 circle.fill 로 변한다.
-  - delete를 누르면 하나씩 다시 circle로 돌아오기
+- 숫자 버튼을 누를 때 circle들이 circle.fill 로 변한다. ✅
+  - delete를 누르면 하나씩 다시 circle로 돌아오기 ✅
+- 암호 틀렸을 때 circle로 돌아오기, circle들이 흔들리기
 
 <br>
 
@@ -142,3 +143,69 @@ Button(action: {
 - ```inputNumber.count == 0```일 때 Cancel을 표시해주며
 - 0 이상일 때는 Delete를 보여준다.
 - Bool 타입 isDeleteMode 변수를 만들어서 Delete 상태임을 체크 후 true이면서 버튼이 눌렸을 때 ```dropLast()```로 하나씩 지워준다.
+
+<br>
+
+## 비밀번호를 잘 입력했을 때 Lock 이모지가 풀리면서 애니메이션!
+[발견한 페이지](https://iosexample.com/iphone-faceid-unlock-animation/)
+
+<br>
+
+## 암호 틀렸을 때 circle로 돌아오기, circle들이 흔들리기
+- 6번 눌렀을 때 inputNumber가 초기화 되야하는데 어느 부분에서 초기화 해야할까
+
+### 먼저 떨림 구현하고 다른 버튼에 적용해보기
+```swift
+ @State var numberOfShakes: CGFloat = 0
+
+/// 버튼 부분
+Text("Emergency")
+    .font(.system(.body))
+    .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+    .onAppear {
+        withAnimation(.easeIn(duration: 0.5)) { // 0.5초 동안
+            numberOfShakes = 3  // 떨림 횟수 정해주기
+        }
+    }
+
+/// 애니메이션 부분
+struct ShakeEffect: AnimatableModifier {
+    var shakeNumber: CGFloat = 0
+
+    var animatableData: CGFloat {
+        get {
+            shakeNumber
+        } set {
+            shakeNumber = newValue
+        }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .offset(x: sin(shakeNumber * .pi * 2) * 5)  // 떨림 범위..?
+    }
+}
+```
+> .offset부분 정확히 어떤 원리로 값이 매겨지는지 모르겠다.
+- 이제 위 코드를 circle들에 적용하면되는데,,,
+
+### 버튼에 적용해보기도 성공
+```swift
+Button(action: {
+    // emergency action
+    withAnimation(.easeIn(duration: 0.5)) {
+        numberOfShakes = 3
+    }
+    numberOfShakes = 0  // 반드시 초기화 해줘야 계속해서 할 수 있다.
+}) {
+    Text("Emergency")
+        .font(.system(.body))
+        .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+        
+    
+}
+
+```
+
+- 우선 비밀번호에 대한 보안성은 완전히 깨졌다.
+- 도대체 어떤 방법을 이용해야할까!!!

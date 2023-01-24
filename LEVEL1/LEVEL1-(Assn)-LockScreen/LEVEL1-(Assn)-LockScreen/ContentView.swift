@@ -11,6 +11,10 @@ struct ContentView: View {
     
     @State var inputNumber: String = ""
     @State var isDeleteMode = false
+    @State var numberOfShakes: CGFloat = 0
+    @State var shouldShake = false
+    var myPassword = Password()
+    @State var isCorrectPassword = false
     
     var body: some View {
         ZStack{
@@ -23,8 +27,14 @@ struct ContentView: View {
             VStack(spacing: 18) {
                 Spacer()
                 // lock 이미지
-                Image(systemName: "lock.fill")
-                    .foregroundColor(.white)
+                if isCorrectPassword {
+                    Image(systemName: "lock.open.fill")
+                        .foregroundColor(.white)
+                } else {
+                    Image(systemName: "lock.fill")
+                        .foregroundColor(.white)
+                }
+                
                 
                 Spacer()
                 Text("Enter Passcode")
@@ -38,10 +48,12 @@ struct ContentView: View {
                             Image(systemName: "circle.fill")
                                 .resizable()
                                 .frame(width: 13, height: 13)
+                                .modifier(ShakeEffect(shakeNumber: numberOfShakes))
                         } else {
                             Image(systemName: "circle")
                                 .resizable()
                                 .frame(width: 13, height: 13)
+                                .modifier(ShakeEffect(shakeNumber: numberOfShakes))
                         }
                     }
                 }
@@ -52,10 +64,11 @@ struct ContentView: View {
                 ForEach(numberDummy, id: \.self) { items in
                     HStack (spacing: 20) {
                         ForEach(items, id: \.self) { item in
-                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial, inputNumber: $inputNumber)
+                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial, inputNumber: $inputNumber, isCorrectPassword: $isCorrectPassword)
                         }
                     }
                 }
+                
                 
                 Spacer()
                 // Emergency, Cancel(Delete)
@@ -72,7 +85,7 @@ struct ContentView: View {
                         // delete action
                         if inputNumber.count > 0 {
                             isDeleteMode = true
-                          }
+                        }
                         if isDeleteMode == true {
                             inputNumber = String(inputNumber.dropLast())
                         }
@@ -84,10 +97,11 @@ struct ContentView: View {
                             Text("Delete")
                                 .font(.system(.body))
                         }
-
+                        
                     }
                     Spacer()
                 }
+                
                 Spacer()
             }
             .padding(.horizontal)
@@ -96,7 +110,34 @@ struct ContentView: View {
         }
         
     }
+    
+}
 
+struct ShakeEffect: AnimatableModifier {
+    var shakeNumber: CGFloat = 0
+    
+    var animatableData: CGFloat {
+        get {
+            shakeNumber
+        } set {
+            shakeNumber = newValue
+        }
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .offset(x: sin(shakeNumber * .pi * 2) * 5)
+    }
+}
+
+class Password {
+    private var myPassword = "000000"
+    func getMyValue() -> String {
+        return myPassword
+    }
+    func setMyValue(newValue: String) {
+        myPassword = newValue
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -12,9 +12,23 @@ struct NumberButton: View {
     let number: Number
     let buttonMaterial: Material?
     @Binding var inputNumber: String
+    
+    let instance = Password()
+    @Binding var isCorrectPassword: Bool
+    
     var body: some View {
         Button {
             inputNumber += number.mainNumber
+            if inputNumber.count == 6 {
+                if inputNumber == instance.getMyValue() {
+                    isCorrectPassword = true
+                } else {
+                    isCorrectPassword = false
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    inputNumber = ""
+                }
+            }
         } label: {
             if let material = buttonMaterial {
                 
