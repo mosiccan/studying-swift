@@ -42,18 +42,50 @@ struct ContentView: View {
                     .font(.title3)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                 
-                HStack(spacing: 24) {
-                    ForEach(0..<6) { number in
-                        if inputNumber.count > number {
-                            Image(systemName: "circle.fill")
-                                .resizable()
-                                .frame(width: 13, height: 13)
-                                .modifier(ShakeEffect(shakeNumber: numberOfShakes))
-                        } else {
-                            Image(systemName: "circle")
-                                .resizable()
-                                .frame(width: 13, height: 13)
-                                .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+                HStack {
+                    if inputNumber.count == 6 && isCorrectPassword == false {
+                        HStack(spacing: 24) {
+                            ForEach(0..<6) { number in
+                                if inputNumber.count > number {
+                                    Image(systemName: "circle.fill")
+                                        .resizable()
+                                        .frame(width: 13, height: 13)
+                                        .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+                                        .onAppear {
+                                            withAnimation(.easeIn(duration: 0.5)) {
+                                                numberOfShakes = 3
+                                            }
+                                            numberOfShakes = 0
+                                        }
+                                } else {
+                                    Image(systemName: "circle")
+                                        .resizable()
+                                        .frame(width: 13, height: 13)
+                                        .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+                                        .onAppear {
+                                            withAnimation(.easeIn(duration: 0.5)) {
+                                                numberOfShakes = 3
+                                            }
+                                            numberOfShakes = 0
+                                        }
+                                    
+                                }
+                            }
+                        }
+                    } else {
+                        HStack(spacing: 24) {
+                            ForEach(0..<6) { number in
+                                if inputNumber.count > number {
+                                    Image(systemName: "circle.fill")
+                                        .resizable()
+                                        .frame(width: 13, height: 13)
+                                } else {
+                                    Image(systemName: "circle")
+                                        .resizable()
+                                        .frame(width: 13, height: 13)
+                                    
+                                }
+                            }
                         }
                     }
                 }
@@ -64,7 +96,7 @@ struct ContentView: View {
                 ForEach(numberDummy, id: \.self) { items in
                     HStack (spacing: 20) {
                         ForEach(items, id: \.self) { item in
-                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial, inputNumber: $inputNumber, isCorrectPassword: $isCorrectPassword)
+                            NumberButton(number: Number(mainNumber: item.mainNumber, subAlphabet: item.subAlphabet), buttonMaterial: item.buttonMaterial, inputNumber: $inputNumber)
                         }
                     }
                 }
@@ -126,7 +158,7 @@ struct ShakeEffect: AnimatableModifier {
     
     func body(content: Content) -> some View {
         content
-            .offset(x: sin(shakeNumber * .pi * 2) * 5)
+            .offset(x: sin(shakeNumber * .pi * 2) * 20)
     }
 }
 

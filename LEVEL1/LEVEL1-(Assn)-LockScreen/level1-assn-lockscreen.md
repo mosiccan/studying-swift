@@ -2,12 +2,12 @@
 
 
 ## 구현해볼 기능들
-- 비밀번호를 잘 입력했을 때 Lock 이모지가 풀리면서 애니메이션!
+- 비밀번호를 잘 입력했을 때 Lock 이모지가 풀리면서 애니메이션! ✅
 - 숫자 버튼이 눌리면 Cancel 버튼이 Delete로 변한다.✅
 - 버튼을 누를 때 버튼 영역이 흰 배경으로 됐다가 돌아와야하는데 현재는 material 효과가 어둡게 됐다가 돌아온다.
 - 숫자 버튼을 누를 때 circle들이 circle.fill 로 변한다. ✅
   - delete를 누르면 하나씩 다시 circle로 돌아오기 ✅
-- 암호 틀렸을 때 circle로 돌아오기, circle들이 흔들리기
+- 암호 틀렸을 때 circle로 돌아오기, circle들이 흔들리기 ✅
 
 <br>
 
@@ -209,3 +209,58 @@ Button(action: {
 
 - 우선 비밀번호에 대한 보안성은 완전히 깨졌다.
 - 도대체 어떤 방법을 이용해야할까!!!
+
+<br>
+
+### 하드코딩으로 일단 구현은 완료...!
+```swift
+HStack {
+    if inputNumber.count == 6 && isCorrectPassword == false {
+        HStack(spacing: 24) {
+            ForEach(0..<6) { number in
+                if inputNumber.count > number {
+                    Image(systemName: "circle.fill")
+                        .resizable()
+                        .frame(width: 13, height: 13)
+                        .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+                        .onAppear {
+                            withAnimation(.easeIn(duration: 0.5)) {
+                                numberOfShakes = 3
+                            }
+                            numberOfShakes = 0
+                        }
+                } else {
+                    Image(systemName: "circle")
+                        .resizable()
+                        .frame(width: 13, height: 13)
+                        .modifier(ShakeEffect(shakeNumber: numberOfShakes))
+                        .onAppear {
+                            withAnimation(.easeIn(duration: 0.5)) {
+                                numberOfShakes = 3
+                            }
+                            numberOfShakes = 0
+                        }
+                    
+                }
+            }
+        }
+    } else {
+        HStack(spacing: 24) {
+            ForEach(0..<6) { number in
+                if inputNumber.count > number {
+                    Image(systemName: "circle.fill")
+                        .resizable()
+                        .frame(width: 13, height: 13)
+                } else {
+                    Image(systemName: "circle")
+                        .resizable()
+                        .frame(width: 13, height: 13)
+                    
+                }
+            }
+        }
+    }
+}
+.foregroundColor(.white)
+```
+- HStack 안에 if 문으로 6글자 입력 완료 여부, 올바른 비밀번호인지 여부 확인 후 이미지에 modifier과 .onAppear로 애니메이션을 적용해줬다. 아닐 경우는 그대로 출력되게 해줬다.
