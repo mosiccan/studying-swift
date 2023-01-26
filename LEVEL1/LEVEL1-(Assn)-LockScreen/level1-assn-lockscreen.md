@@ -264,3 +264,41 @@ HStack {
 .foregroundColor(.white)
 ```
 - HStack 안에 if 문으로 6글자 입력 완료 여부, 올바른 비밀번호인지 여부 확인 후 이미지에 modifier과 .onAppear로 애니메이션을 적용해줬다. 아닐 경우는 그대로 출력되게 해줬다.
+
+<br>
+
+### View들 함수로 정리하기
+
+```swift
+ZStack {
+    wallPaper()
+    VStack(spacing: 18) {
+        Spacer()
+        if isCorrectPassword {
+            Image(systemName: "lock.open.fill")
+                .foregroundColor(.white)
+        } else {
+            Image(systemName: "lock.fill")
+                .foregroundColor(.white)
+        }
+        Spacer()
+        Text("Enter Passcode")
+            .foregroundColor(.white)
+            .font(.title3)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+        
+        passwordCheckCircles()
+        Spacer()
+        keypadDialView()
+        Spacer()
+        tabBar()
+        Spacer()
+    }
+    .padding(.horizontal)
+    .foregroundColor(.white)
+    Spacer()
+}
+```
+- ZStack에 있는 View들을 함수로 정리했다.
+- lock이미지나 Enter Passcode는 어떻게 View로 뺴야할까?
+- 비밀번호는 해싱을 꼭 해봐야겠다!
