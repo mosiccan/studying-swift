@@ -1,4 +1,4 @@
- # LEVEL1 클론코딩 - 설정앱
+ # LEVEL2 클론코딩 - 설정앱
 
  ## UI 스케치, 프로필 뷰, 셀 디테일
  ```swift
@@ -106,6 +106,5 @@ private func plainCell<V: View>(imageName: String, iconColor: Color, cellTitle: 
 - 현재로썬 이미지이름, 아이콘색, 텍스트, destination의 정보만 인자로 만들어 주면 된다.
 - View를 인자로 넘길 땐 ```<V: View>``` 와 같은 형태로 써야하는 것 같다.
   - (위 개념 공부 할 것!)
-
  <br>
 
