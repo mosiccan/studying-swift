@@ -78,7 +78,34 @@ NavigationView {
 
  ## 리팩토링 1
 ```swift
+plainCell(imageName: "gear",
+          iconColor: .gray,
+          cellTitle: "  General") {
+    Text("Display General")
+}
+
+@ViewBuilder
+private func plainCell<V: View>(imageName: String, iconColor: Color, cellTitle: String, destination: @escaping() -> V) -> some View {
+        HStack {
+            Image(systemName: imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .padding(.all, 4)
+                .background(iconColor)
+                .foregroundColor(.white)
+                .cornerRadius(6)
+            
+            NavigationLink(cellTitle){
+                destination()
+        }
+    }
+}
 ```
+- 중복되는 코드들을 함수화 해주었다.
+- 현재로썬 이미지이름, 아이콘색, 텍스트, destination의 정보만 인자로 만들어 주면 된다.
+- View를 인자로 넘길 땐 ```<V: View>``` 와 같은 형태로 써야하는 것 같다.
+  - (위 개념 공부 할 것!)
 
  <br>
 

@@ -19,61 +19,13 @@ struct ContentView: View {
                         NavigationLink {
                             Text("Profile")
                         } label: {
-                            HStack {
-                                Image(systemName: "tennisball")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 54, height: 54)
-                                    .background(.green)
-                                    .clipShape(Circle())
-                                VStack (alignment: .leading) {
-                                    Text(" Woowon Kang")
-                                        .font(.title2)
-                                    Text("  Apple ID, iCloud, Media & Purchases")
-                                        .font(.system(size: 13))
-                                }
-                                
-                            }
-                            .padding(.vertical, -5)
+                            profileCell()
                         }
-                        
-                        
                     }
                     
                     Section {
-                        HStack {
-                            Image(systemName: "airplane")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .padding(.all, 5)
-                                .background(.orange)
-                                .foregroundColor(.white)
-                                .cornerRadius(6)
-                            
-                            Toggle("  Airplane Mode", isOn: $isAirplaneModeOn)
-                        }
-                        HStack {
-                            Image(systemName: "wifi")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .padding(.all, 5)
-                                .background(.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(6)
-                            
-                            NavigationLink {
-                                Text("Display Screen Time")
-                            } label: {
-                                HStack {
-                                    Text("  Wi-Fi")
-                                    Spacer()
-                                    Text("KT_GIGA_BE95")
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                        }
+                        airplaneToggleCell()
+                        wifiTextCell()
                         HStack {
                             Image(systemName: "hourglass")
                                 .resizable()
@@ -159,68 +111,110 @@ struct ContentView: View {
                     }
                     
                     Section {
-                        HStack {
-                            Image(systemName: "gear")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .padding(.all, 4)
-                                .background(.gray)
-                                .foregroundColor(.white)
-                                .cornerRadius(6)
-                            
-                            NavigationLink("  General"){
-                                Text("Display General")
-                            }
+                        plainCell(imageName: "gear",
+                                  iconColor: .gray,
+                                  cellTitle: "  General") {
+                            Text("Display General")
                         }
-                        HStack {
-                            Image(systemName: "figure.arms.open")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .padding(.all, 4)
-                                .background(.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(6)
-                            
-                            NavigationLink("  Accessibility"){
-                                Text("Display Accessibility")
-                            }
+                        plainCell(imageName: "figure.arms.open",
+                                  iconColor: .blue,
+                                  cellTitle: "  Accessibility") {
+                            Text("Display Accessibility")
                         }
-                        HStack {
-                            Image(systemName: "hand.raised.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .padding(.all, 4)
-                                .background(.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(6)
-                            
-                            NavigationLink("  Privacy & Security"){
-                                Text("Display Privacy & Security")
-                            }
+                        plainCell(imageName: "hand.raised.fill",
+                                  iconColor: .blue,
+                                  cellTitle: "  Privacy & Security") {
+                            Text("Display Privacy & Security")
                         }
-
                     }
-                    HStack {
-                        Image(systemName: "key.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .padding(.all, 4)
-                            .background(.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(6)
-                        
-                        NavigationLink("  Passwords"){
-                            Text("Display Passwords")
-                        }
+                    
+                    plainCell(imageName: "key.fill", iconColor: .gray,
+                              cellTitle: "  Passwords") {
+                        Text("Display Passwords")
+                        // gray
                     }
                 }.navigationTitle("Settings")
             }
         }
     
+    @ViewBuilder
+    private func profileCell() -> some View {
+        HStack {
+            Image(systemName: "tennisball")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 54, height: 54)
+                .background(.green)
+                .clipShape(Circle())
+            VStack (alignment: .leading) {
+                Text(" Woowon Kang")
+                    .font(.title2)
+                Text("  Apple ID, iCloud, Media & Purchases")
+                    .font(.system(size: 13))
+            }
+            
+        }
+        .padding(.vertical, -5)
+    }
+    
+    @ViewBuilder
+    private func airplaneToggleCell() -> some View {
+        HStack {
+            Image(systemName: "airplane")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .padding(.all, 5)
+                .background(.orange)
+                .foregroundColor(.white)
+                .cornerRadius(6)
+            
+            Toggle("  Airplane Mode", isOn: $isAirplaneModeOn)
+        }
+    }
+    
+    @ViewBuilder
+    private func wifiTextCell() -> some View {
+        HStack {
+            Image(systemName: "wifi")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .padding(.all, 5)
+                .background(.blue)
+                .foregroundColor(.white)
+                .cornerRadius(6)
+            
+            NavigationLink {
+                Text("Display Screen Time")
+            } label: {
+                HStack {
+                    Text("  Wi-Fi")
+                    Spacer()
+                    Text("KT_GIGA_BE95")
+                        .foregroundColor(.gray)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func plainCell<V: View>(imageName: String, iconColor: Color, cellTitle: String, destination: @escaping() -> V) -> some View {
+            HStack {
+                Image(systemName: imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
+                    .padding(.all, 4)
+                    .background(iconColor)
+                    .foregroundColor(.white)
+                    .cornerRadius(6)
+                
+                NavigationLink(cellTitle){
+                    destination()
+            }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
