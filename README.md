@@ -93,7 +93,8 @@ https://www.youtube.com/@Leeo25/playlists
   
 코드
 - [LEVEL2 Setting](https://github.com/mosiccan/studying-swift/tree/main/LEVEL2/LEVEL2-Setting)    
-  > TBU - LEVEL2 폴더로 옮기기, 이름 재설정 등  
+  > TBU - LEVEL2 폴더로 옮기기, 이름 재설정 등       
+
 내용 정리
 - [UI 스케치, 프로필 뷰, 셀 디테일](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-Setting/level2-setting.md#ui-%EC%8A%A4%EC%BC%80%EC%B9%98-%ED%94%84%EB%A1%9C%ED%95%84-%EB%B7%B0-%EC%85%80-%EB%94%94%ED%85%8C%EC%9D%BC)
 - [리팩토링 1](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-Setting/level2-setting.md#%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-1)
