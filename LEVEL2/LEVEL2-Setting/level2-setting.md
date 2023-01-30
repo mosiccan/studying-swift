@@ -106,5 +106,59 @@ private func plainCell<V: View>(imageName: String, iconColor: Color, cellTitle: 
 - 현재로썬 이미지이름, 아이콘색, 텍스트, destination의 정보만 인자로 만들어 주면 된다.
 - View를 인자로 넘길 땐 ```<V: View>``` 와 같은 형태로 써야하는 것 같다.
   - (위 개념 공부 할 것!)
- <br>
+<br>
 
+<br>
+
+## 리팩토링 2
+```swift
+@ViewBuilder
+private func iconImage(imageName: String, iconColor: Color) -> some View {
+    Image(systemName: imageName)
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 20, height: 20)
+        .padding(.all, 5)
+        .background(iconColor)
+        .foregroundColor(.white )
+        .cornerRadius(6)
+}
+
+@ViewBuilder
+private func toggleCell(imageName: String, iconColor: Color, cellTitle: String, isModeOn: Binding<Bool>) -> some View {
+    HStack {
+        iconImage(imageName: imageName, iconColor: iconColor)
+        Toggle(cellTitle, isOn: $isAirplaneModeOn)
+    }
+}
+
+@ViewBuilder
+private func navigationLinkCell<V: View>(imageName: String, iconColor: Color,
+                                cellTitle: String, subTitle: String? = nil,
+                                destination: @escaping() -> V) -> some View {
+    HStack {
+        iconImage(imageName: imageName, iconColor: iconColor)
+        if let subTitle = subTitle {
+            NavigationLink{
+                destination()
+            } label: {
+                HStack {
+                    Text(cellTitle)
+                    Spacer()
+                    Text(subTitle)
+                        .foregroundColor(.gray)
+                }
+            }
+        } else {
+            NavigationLink(cellTitle){
+                destination()
+            }
+        }
+        
+        
+    }
+}
+```
+- 위와 같은 형태로 1번의 수정으로 관련된 여러파일을 한번에 수정할 수 있도록 코드를 만들었다.
+- 예를 들어 여러 아이콘의 크기를 변경하고 싶을 때 각각의 아이콘마다 수정을 해주는 게 아니라 해당 기능을 함수로 묶어 처리한다.
+- 다음에 변경하거나 추가할 때 좀 더 실수하지 않고 확실하게 할 수 있을지를 생각하면서 코드를 정리 하자!
