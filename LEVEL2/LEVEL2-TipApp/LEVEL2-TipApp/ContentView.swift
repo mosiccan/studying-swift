@@ -30,7 +30,8 @@ struct ContentView: View {
                     
                     Section {
                         NavigationLink {
-                            Text("Detail Protect your information")
+                            ProtectInformationDetail()
+                                .background(Material.thick)
                         } label: {
                             HStack {
                                 Image(systemName: "lock.shield")

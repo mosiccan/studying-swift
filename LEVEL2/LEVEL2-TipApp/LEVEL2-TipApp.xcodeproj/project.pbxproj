@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD2FC595298A431A00CC0131 /* iphone-14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD2FC594298A431A00CC0131 /* iphone-14.jpeg */; };
+		CD357A47298B83BD00933A2E /*  ProtectInformationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD357A46298B83BD00933A2E /*  ProtectInformationDetail.swift */; };
+		CD357A49298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD357A48298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg */; };
 		CDE19D81298A2CD0004F340C /* LEVEL2_TipAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE19D80298A2CD0004F340C /* LEVEL2_TipAppApp.swift */; };
 		CDE19D83298A2CD0004F340C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE19D82298A2CD0004F340C /* ContentView.swift */; };
 		CDE19D85298A2CD1004F340C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE19D84298A2CD1004F340C /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		CD2FC594298A431A00CC0131 /* iphone-14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "iphone-14.jpeg"; path = "../../../../../Desktop/iphone-14.jpeg"; sourceTree = "<group>"; };
+		CD357A46298B83BD00933A2E /*  ProtectInformationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ProtectInformationDetail.swift"; sourceTree = "<group>"; };
+		CD357A48298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = addFaceIDwithAMaskIcon.jpg; path = ../../../../../Desktop/addFaceIDwithAMaskIcon.jpg; sourceTree = "<group>"; };
 		CDE19D7D298A2CD0004F340C /* LEVEL2-TipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LEVEL2-TipApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE19D80298A2CD0004F340C /* LEVEL2_TipAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL2_TipAppApp.swift; sourceTree = "<group>"; };
 		CDE19D82298A2CD0004F340C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,8 +102,10 @@
 			children = (
 				CDE19D80298A2CD0004F340C /* LEVEL2_TipAppApp.swift */,
 				CDE19D82298A2CD0004F340C /* ContentView.swift */,
+				CD357A46298B83BD00933A2E /*  ProtectInformationDetail.swift */,
 				CDE19D84298A2CD1004F340C /* Assets.xcassets */,
 				CD2FC594298A431A00CC0131 /* iphone-14.jpeg */,
+				CD357A48298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg */,
 				CDE19D86298A2CD1004F340C /* Preview Content */,
 			);
 			path = "LEVEL2-TipApp";
@@ -234,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD357A49298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg in Resources */,
 				CD2FC595298A431A00CC0131 /* iphone-14.jpeg in Resources */,
 				CDE19D88298A2CD1004F340C /* Preview Assets.xcassets in Resources */,
 				CDE19D85298A2CD1004F340C /* Assets.xcassets in Resources */,
@@ -262,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDE19D83298A2CD0004F340C /* ContentView.swift in Sources */,
+				CD357A47298B83BD00933A2E /*  ProtectInformationDetail.swift in Sources */,
 				CDE19D81298A2CD0004F340C /* LEVEL2_TipAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
