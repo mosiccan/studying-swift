@@ -215,3 +215,110 @@ List {
 .edgesIgnoringSafeArea(.top)
 ```
 - edgesIgnoringSafeArea(.top)을 해주어 위쪽 영역도 배경이 보이게 해주었다.
+
+<br>
+
+## 상세의 상세
+```swift
+// ProtectInformationDetail
+NavigationLink {
+    FaceIDWithAMaskDetail()        
+}
+``` 
+
+```swift
+// FaceIDWithAMaskDetail
+
+VStack {
+    Spacer()
+    Image("example1")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 240)
+        .padding(.bottom, 30)
+    
+    VStack(alignment: .leading){
+        Text("Add Face ID with a mask")
+            .font(.title3)
+            .bold()
+            .padding(.bottom, 3)
+        Text("Glance at your iPhone to unlock it, use Apple Pay, and more. To set up an alternate appearance, like glasses or a mask, go to Setings, then tap Face ID & Passcode.")
+            .font(.system(size: 15))
+    }
+    .lineSpacing(4)
+    .frame(width: 320)
+    
+    Spacer()
+    
+    Button {
+        //
+    } label: {
+        Text("Review Face ID Settings")
+            .font(.system(size: 16))
+    }
+    .frame(width: 200, height: 40)
+    .background(Color(UIColor.systemGray6))
+    .cornerRadius(24)
+    
+    Spacer()
+    
+    PageControl(numberOfPages: 6, currentPage: $selectedPage)
+}
+.navigationTitle("Protect your information")
+.toolbar {
+    Button {
+        // clicked bookmark
+    } label: {
+        Image(systemName: "bookmark")
+    }
+}
+
+```
+
+<br>
+
+- PageControl; 점 모양으로 페이지 표시
+
+```swift
+struct PageControl: View {
+    var numberOfPages: Int
+    @Binding var currentPage: Int
+    var body: some View {
+        HStack {
+            ForEach(0 ..< numberOfPages) { index in
+                Circle()
+                    .frame(width: 8, height: 8)
+                    .foregroundColor(index == self.currentPage ? .white : .gray)
+                    .padding(.horizontal, 2)
+                    .onTapGesture (perform: {
+                        self.currentPage = index
+                    })
+                
+            }
+        }
+    }
+}
+```
+
+<br>
+
+## 페이지 표시
+```swift
+ScrollView {
+    HStack {
+        TabView {
+            VStack{ 
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-60)
+        .tabViewStyle(.page(indexDisplayMode: .always))
+    }
+}
+
+```
+- ScrollView와 TabView를 이용해서 옆으로 드래그가 가능하게 해준다.
+- 가로 영역을 정할때 처음엔 frame에 ```.infinity``` 로 생각했지만, 다른 기기에서는 잘릴 수 있다고 한다.
+- 따라서 ```.UIScreen.main.bounds.width``` 가 모든 기기에서 동일하게 화면의 가로 영역을 정해줄 수 있다.
+- ```.tabViewStyle(.page(indexDisplayMode: .always))``` 를 사용해서 indicator가 보이게 해준다...! 
+
+- 현재 코드에선 tabbar부분 indicator 위치가 고정이 안된다. 이를 해결해야한다!

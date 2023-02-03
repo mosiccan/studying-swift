@@ -10,6 +10,13 @@
 		CD2FC595298A431A00CC0131 /* iphone-14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD2FC594298A431A00CC0131 /* iphone-14.jpeg */; };
 		CD357A47298B83BD00933A2E /*  ProtectInformationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD357A46298B83BD00933A2E /*  ProtectInformationDetail.swift */; };
 		CD357A49298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD357A48298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg */; };
+		CD604BE2298CDF950043C1CF /* FaceIDWithAMaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD604BE1298CDF950043C1CF /* FaceIDWithAMaskDetail.swift */; };
+		CD604BE4298CE28D0043C1CF /* example1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD604BE3298CE28D0043C1CF /* example1.jpg */; };
+		CD604BEA298CF4A70043C1CF /* example5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD604BE5298CF4A60043C1CF /* example5.jpg */; };
+		CD604BEB298CF4A70043C1CF /* example4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD604BE6298CF4A60043C1CF /* example4.jpg */; };
+		CD604BEC298CF4A70043C1CF /* example2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD604BE7298CF4A60043C1CF /* example2.jpg */; };
+		CD604BED298CF4A70043C1CF /* example3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD604BE8298CF4A60043C1CF /* example3.jpg */; };
+		CD604BEE298CF4A70043C1CF /* example6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD604BE9298CF4A70043C1CF /* example6.jpg */; };
 		CDE19D81298A2CD0004F340C /* LEVEL2_TipAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE19D80298A2CD0004F340C /* LEVEL2_TipAppApp.swift */; };
 		CDE19D83298A2CD0004F340C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE19D82298A2CD0004F340C /* ContentView.swift */; };
 		CDE19D85298A2CD1004F340C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE19D84298A2CD1004F340C /* Assets.xcassets */; };
@@ -40,6 +47,13 @@
 		CD2FC594298A431A00CC0131 /* iphone-14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "iphone-14.jpeg"; path = "../../../../../Desktop/iphone-14.jpeg"; sourceTree = "<group>"; };
 		CD357A46298B83BD00933A2E /*  ProtectInformationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ProtectInformationDetail.swift"; sourceTree = "<group>"; };
 		CD357A48298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = addFaceIDwithAMaskIcon.jpg; path = ../../../../../Desktop/addFaceIDwithAMaskIcon.jpg; sourceTree = "<group>"; };
+		CD604BE1298CDF950043C1CF /* FaceIDWithAMaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDWithAMaskDetail.swift; sourceTree = "<group>"; };
+		CD604BE3298CE28D0043C1CF /* example1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = example1.jpg; path = ../../../../../Downloads/example1.jpg; sourceTree = "<group>"; };
+		CD604BE5298CF4A60043C1CF /* example5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = example5.jpg; path = ../../../../../Downloads/example5.jpg; sourceTree = "<group>"; };
+		CD604BE6298CF4A60043C1CF /* example4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = example4.jpg; path = ../../../../../Downloads/example4.jpg; sourceTree = "<group>"; };
+		CD604BE7298CF4A60043C1CF /* example2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = example2.jpg; path = ../../../../../Downloads/example2.jpg; sourceTree = "<group>"; };
+		CD604BE8298CF4A60043C1CF /* example3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = example3.jpg; path = ../../../../../Downloads/example3.jpg; sourceTree = "<group>"; };
+		CD604BE9298CF4A70043C1CF /* example6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = example6.jpg; path = ../../../../../Downloads/example6.jpg; sourceTree = "<group>"; };
 		CDE19D7D298A2CD0004F340C /* LEVEL2-TipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LEVEL2-TipApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE19D80298A2CD0004F340C /* LEVEL2_TipAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL2_TipAppApp.swift; sourceTree = "<group>"; };
 		CDE19D82298A2CD0004F340C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,9 +117,16 @@
 				CDE19D80298A2CD0004F340C /* LEVEL2_TipAppApp.swift */,
 				CDE19D82298A2CD0004F340C /* ContentView.swift */,
 				CD357A46298B83BD00933A2E /*  ProtectInformationDetail.swift */,
+				CD604BE1298CDF950043C1CF /* FaceIDWithAMaskDetail.swift */,
 				CDE19D84298A2CD1004F340C /* Assets.xcassets */,
 				CD2FC594298A431A00CC0131 /* iphone-14.jpeg */,
 				CD357A48298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg */,
+				CD604BE3298CE28D0043C1CF /* example1.jpg */,
+				CD604BE7298CF4A60043C1CF /* example2.jpg */,
+				CD604BE8298CF4A60043C1CF /* example3.jpg */,
+				CD604BE6298CF4A60043C1CF /* example4.jpg */,
+				CD604BE5298CF4A60043C1CF /* example5.jpg */,
+				CD604BE9298CF4A70043C1CF /* example6.jpg */,
 				CDE19D86298A2CD1004F340C /* Preview Content */,
 			);
 			path = "LEVEL2-TipApp";
@@ -241,9 +262,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD357A49298BA58F00933A2E /* addFaceIDwithAMaskIcon.jpg in Resources */,
+				CD604BEC298CF4A70043C1CF /* example2.jpg in Resources */,
 				CD2FC595298A431A00CC0131 /* iphone-14.jpeg in Resources */,
 				CDE19D88298A2CD1004F340C /* Preview Assets.xcassets in Resources */,
+				CD604BEB298CF4A70043C1CF /* example4.jpg in Resources */,
 				CDE19D85298A2CD1004F340C /* Assets.xcassets in Resources */,
+				CD604BEA298CF4A70043C1CF /* example5.jpg in Resources */,
+				CD604BED298CF4A70043C1CF /* example3.jpg in Resources */,
+				CD604BE4298CE28D0043C1CF /* example1.jpg in Resources */,
+				CD604BEE298CF4A70043C1CF /* example6.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +297,7 @@
 			files = (
 				CDE19D83298A2CD0004F340C /* ContentView.swift in Sources */,
 				CD357A47298B83BD00933A2E /*  ProtectInformationDetail.swift in Sources */,
+				CD604BE2298CDF950043C1CF /* FaceIDWithAMaskDetail.swift in Sources */,
 				CDE19D81298A2CD0004F340C /* LEVEL2_TipAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

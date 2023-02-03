@@ -25,7 +25,7 @@ struct ProtectInformationDetail: View {
                         .font(.system(size: 15))
                 }
                 .frame(height: 400)
-                .padding(.leading, 8)
+                .padding(.leading, 8) 
                 .listRowBackground(LinearGradient(stops: [
                     .init(color: Color(UIColor.systemGreen), location: 0),
                     .init(color: Color(UIColor.systemTeal), location: 1)
@@ -35,7 +35,8 @@ struct ProtectInformationDetail: View {
                 ], startPoint: .top, endPoint: .bottom)))
                 
                 NavigationLink {
-                    Text("Detail Add Face ID with a mask")
+                    FaceIDWithAMaskDetail()
+                        
                 } label: {
                     HStack {
                         Image("addFaceIDwithAMaskIcon")
