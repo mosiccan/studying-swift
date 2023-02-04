@@ -322,3 +322,64 @@ ScrollView {
 - ```.tabViewStyle(.page(indexDisplayMode: .always))``` 를 사용해서 indicator가 보이게 해준다...! 
 
 - 현재 코드에선 tabbar부분 indicator 위치가 고정이 안된다. 이를 해결해야한다!
+
+<br>
+
+## 데이터 모델링
+```swift
+struct Collection: Identifiable {
+    var id = UUID()
+    let symbolName: String
+    let symbolColor: [Color]
+    let title: String
+}
+```
+- Identifiable에 꼭 필요한 id
+- 각 NavigationLink 에서 구분할 수 있는 요소는 symbolName, symbolColor, title
+
+<br>
+
+```swift
+var startList: [Collection] = [Collection(symbolName: "lock.shield",
+                                      symbolColor: [.blue, .green],
+                                      title: "Protect your information"),
+                               Collection(symbolName: "lifepreserver",
+                                      symbolColor: [.orange, .yellow],
+                                      title: "Be prepared"),
+                               Collection(symbolName: "star",
+                                      symbolColor: [.red, .orange],
+                                      title: "Set up essentials"),
+                               Collection(symbolName: "heart",
+                                      symbolColor: [.purple, .pink],
+                                      title: "Personalize your iPhone")]
+```
+- 실제 값들을 지정해준다.
+
+```swift
+Section {
+    ForEach(startList) { list in
+        NavigationLink {
+            ProtectInformationDetail()
+                .background(Material.thick)
+        } label: {
+            HStack {
+                Image(systemName: list.symbolName)
+                    .resizable()
+                    .foregroundStyle(.linearGradient(colors: list.symbolColor, startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .scaledToFit()
+                    .frame(width: 20 , height: 20)
+                
+                Text(list.title)
+                    .padding(.leading, 10)
+            }
+        }
+    }
+} header: {
+    Text("Get Started")
+        .foregroundColor(.white)
+        .textCase(nil)
+        .bold()
+        .font(.title3)
+}
+```
+- struct - list - ForEach로 데이터를 가져와서 간소화하기
