@@ -89,7 +89,7 @@ https://www.youtube.com/@Leeo25/playlists
 ## LEVEL2
 ### 1. 클론코딩 설정앱
 학습기간
-> 2023/01/27 ~   
+> 2023/01/27 ~ 2023/01/30
   
 코드
 - [LEVEL2 Setting](https://github.com/mosiccan/studying-swift/tree/main/LEVEL2/LEVEL2-Setting)    
@@ -97,3 +97,22 @@ https://www.youtube.com/@Leeo25/playlists
 내용 정리
 - [UI 스케치, 프로필 뷰, 셀 디테일](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-Setting/level2-setting.md#ui-%EC%8A%A4%EC%BC%80%EC%B9%98-%ED%94%84%EB%A1%9C%ED%95%84-%EB%B7%B0-%EC%85%80-%EB%94%94%ED%85%8C%EC%9D%BC)
 - [리팩토링 1](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-Setting/level2-setting.md#%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-1)
+- [리팩토링 2](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-Setting/level2-setting.md#%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-2)
+
+<br>
+
+### 2. 클론코딩 팁앱
+학습기간
+> 2023/02/01 ~ 2023/02/04
+  
+코드
+- [LEVEL2 Tip App](https://github.com/mosiccan/studying-swift/tree/main/LEVEL2/LEVEL2-TipApp)
+
+내용 정리
+- [화면 그리기](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%ED%99%94%EB%A9%B4-%EA%B7%B8%EB%A6%AC%EA%B8%B0)
+- [화면 완성](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%ED%99%94%EB%A9%B4-%EC%99%84%EC%84%B1)
+- [상세화면 그리기](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%EC%83%81%EC%84%B8%ED%99%94%EB%A9%B4-%EA%B7%B8%EB%A6%AC%EA%B8%B0)
+- [상세 페이지](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%EC%83%81%EC%84%B8-%ED%8E%98%EC%9D%B4%EC%A7%80)
+- [상세의 상세](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%EC%83%81%EC%84%B8%EC%9D%98-%EC%83%81%EC%84%B8)
+- [페이지 표시](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%91%9C%EC%8B%9C)
+- [데이터 모델링](https://github.com/mosiccan/studying-swift/blob/main/LEVEL2/LEVEL2-TipApp/level2-tip-app.md#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EB%A7%81)
