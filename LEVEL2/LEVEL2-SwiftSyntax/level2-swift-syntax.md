@@ -46,3 +46,51 @@ struct ContentView_Previews: PreviewProvider {
 ```
 - 어디에 사용해볼 수 있을지 연구해봐야겠다
   - 옵셔널이 적용되는 앱을 생각해보자!
+
+<br>
+
+## 18. 함수와 메서드의 차이
+- 함수
+```swift
+func name(parameter) -> return type {
+    function body
+}
+```
+
+<br>
+
+- 메서드
+- 함수보다 조금 작은 단위 
+```swift
+
+```
+- 메서드 : **enum, struct, class 안에서** 사용되는 함수!
+- 단순히 저 안에 들어있다고 해서 메서드로 볼 것인가?
+
+```swift
+func returnLeeo1() -> String {
+    return "Leeo1"
+}
+
+struct MyMethod: View {
+    var body: some View {
+        Text(returnLeeo2())
+    }
+    func returnLeeo2() -> String {  // 메서드
+        return "Leeo2"
+    }
+}
+struct MyMethod_Previews: PreviewProvider {
+    static var previews: some View {
+        MyMethod()
+        returnLeeo1()
+        returnLeeo3()
+        returnLee02()
+    }
+    func returnLee03() -> String {
+        return "Leeo3"
+    }
+}
+```
+- returnLeeo2는 MyMethod struct에서 사용할 수 있지만
+- MyMethod_Previews struct에서는 사용할 수 없다.
