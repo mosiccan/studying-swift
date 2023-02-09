@@ -49,6 +49,25 @@ struct ContentView_Previews: PreviewProvider {
 
 <br>
 
+## 12. struct, 구조체
+```swift
+struct userInfo {
+    let name: String
+    let age: Int?
+
+    func sayMyName(with name: String ) {
+        print(name)
+    }
+}
+```
+- struct 키워드로 시작
+  - (함수는 func, 변수는 let, 열거형은 enum 등등,)
+- 구조화 된 여러개의 정보를 한 번에!
+ - 구조체가 갖고 있을 정보, 구조체가 행동할 함수가 있다. 
+
+
+<br>
+
 ## 18. 함수와 메서드의 차이
 - 함수
 ```swift
