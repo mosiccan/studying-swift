@@ -3,6 +3,7 @@
 
 ### 기능 불러오기
 - 컴포넌트 불러오기 : ```command + Shift + l``` 
+- 프리뷰 창 띄우기 : ```option + command + Enter```
 
 <br>
 
