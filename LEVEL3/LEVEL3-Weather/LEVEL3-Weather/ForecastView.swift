@@ -24,6 +24,7 @@ struct ForecastView: View {
                 .symbolRenderingMode(.multicolor )
                 .frame(height: 30)
             
+            
             Text("\(Int(celsius))°")
                 .bold()
         }

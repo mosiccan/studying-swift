@@ -57,6 +57,7 @@ struct ContentView: View {
                     }
                 }
                 .offset(y: -offset + 70)
+                .foregroundColor(.white)
                 .background(
                     GeometryReader(content: { geometry ->
                         Color in
@@ -72,7 +73,7 @@ struct ContentView: View {
                 )
                 
                 BlurStackView {
-                    Text("Cloudy conditions will continue for the rest of the day. Wind gust are up to 5 m/s")
+                    Text("Cloudy conditions will continue for the rest of the day. Wind gust are up to 5 m/s.")
                 } contentView: {
                     HStack {
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -95,53 +96,104 @@ struct ContentView: View {
                         Text("10-DAY FORECAST")
                     }
                 } contentView: {
-                    //
+                    VStack {
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                    }
                     
                 }
                 
-//                VStack {
-//                    HStack {
-//                        Image(systemName: "calendar")
-//                        Text("10-DAY FORECAST")
-//                    }
-//                    Divider()
-//                    VStack {
-//                        HStack {
-//                            Text("Today")
-//                            Image(systemName: "cloud.fill")
-//                            Text("-4°")
-//                            Text("9°")
-//                        }
-//                        HStack {
-//                            Text("Today")
-//                            Image(systemName: "cloud.fill")
-//                            Text("-4°")
-//                            Text("9°")
-//                        }
-//                        HStack {
-//                            Text("Today")
-//                            Image(systemName: "cloud.fill")
-//                            Text("-4°")
-//                            Text("9°")
-//                        }
-//                        HStack {
-//                            Text("Today")
-//                            Image(systemName: "cloud.fill")
-//                            Text("-4°")
-//                            Text("9°")
-//                        }
-//                        HStack {
-//                            Text("Today")
-//                            Image(systemName: "cloud.fill")
-//                            Text("-4°")
-//                            Text("9°")
-//                        }
-//                    }
-//                }
-//                .padding()
-//                .background(.green)
-//                .cornerRadius(13)
+                BlurStackView {
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text("10-DAY FORECAST")
+                    }
+                } contentView: {
+                    VStack {
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                    }
+                    
+                }
                 
+                BlurStackView {
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text("10-DAY FORECAST")
+                    }
+                } contentView: {
+                    VStack {
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                        HStack {
+                            Text("Today")
+                            Image(systemName: "cloud.fill")
+                            Text("-4°")
+                            Text("9°")
+                        }
+                    }
+                    
+                }
             }
         }
     }

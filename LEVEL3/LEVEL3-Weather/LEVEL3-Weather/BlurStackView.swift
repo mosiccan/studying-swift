@@ -13,6 +13,7 @@ struct BlurStackView<Header: View, Content: View>: View {
     var contentView: Content
     
     @State var topOffset: CGFloat = 0
+    @State var bottomOffset: CGFloat = 0
     
     init(@ViewBuilder headerView: @escaping () -> Header,
          @ViewBuilder contentView: @escaping () -> Content  ) {
@@ -23,13 +24,17 @@ struct BlurStackView<Header: View, Content: View>: View {
     var body: some View {
         VStack(spacing: 0) {
             headerView
-                .frame(maxWidth: .infinity)
-                .background(.ultraThinMaterial)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .foregroundColor(.white)
+                .background(.ultraThinMaterial, in: IndividualCorner(corners: bottomOffset < 35 ? .allCorners : [.topLeft, .topRight], radius: 16))
                 .zIndex(1)
             Divider()
             contentView
                 .frame(maxWidth: .infinity)
-                .background(.ultraThinMaterial)
+                .padding()
+                .foregroundColor(.white)
+                .background(.ultraThinMaterial, in: IndividualCorner(corners: [.bottomLeft, .bottomRight], radius: 16))
                 .offset(y: topOffset >= 200 ? 0 : topOffset - 200)
                 .zIndex(0)
                 .clipped() 
@@ -40,9 +45,11 @@ struct BlurStackView<Header: View, Content: View>: View {
                 Color in
                 
                 let minY = geometry.frame(in: .global).minY
+                let maxY = geometry.frame(in: .global).maxY
                 
                 DispatchQueue.main.async {
                     topOffset  = minY
+                    bottomOffset = maxY - 240
                 }
                 
                 return Color.clear

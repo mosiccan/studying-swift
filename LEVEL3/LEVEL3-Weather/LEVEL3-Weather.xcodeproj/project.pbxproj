@@ -16,6 +16,7 @@
 		CDE017952998B78000B17D0C /* LEVEL3_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE017942998B78000B17D0C /* LEVEL3_WeatherTests.swift */; };
 		CDE0179F2998B78000B17D0C /* LEVEL3_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0179E2998B78000B17D0C /* LEVEL3_WeatherUITests.swift */; };
 		CDE017A12998B78000B17D0C /* LEVEL3_WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE017A02998B78000B17D0C /* LEVEL3_WeatherUITestsLaunchTests.swift */; };
+		CDF817F7299BCF0200BD2759 /* IndividualCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817F6299BCF0200BD2759 /* IndividualCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		CDE0179A2998B78000B17D0C /* LEVEL3-WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LEVEL3-WeatherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE0179E2998B78000B17D0C /* LEVEL3_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL3_WeatherUITests.swift; sourceTree = "<group>"; };
 		CDE017A02998B78000B17D0C /* LEVEL3_WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEVEL3_WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDF817F6299BCF0200BD2759 /* IndividualCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				CDE017832998B77F00B17D0C /* LEVEL3_WeatherApp.swift */,
 				CDE017852998B77F00B17D0C /* ContentView.swift */,
 				CD9C838C299A10B800EBCE5F /* BlurStackView.swift */,
+				CDF817F6299BCF0200BD2759 /* IndividualCorner.swift */,
 				CD9C838E299A187E00EBCE5F /* ForecastView.swift */,
 				CDE017872998B78000B17D0C /* Assets.xcassets */,
 				CDE017892998B78000B17D0C /* Preview Content */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDE017862998B77F00B17D0C /* ContentView.swift in Sources */,
+				CDF817F7299BCF0200BD2759 /* IndividualCorner.swift in Sources */,
 				CDE017842998B77F00B17D0C /* LEVEL3_WeatherApp.swift in Sources */,
 				CD9C838D299A10B800EBCE5F /* BlurStackView.swift in Sources */,
 				CD9C838F299A187E00EBCE5F /* ForecastView.swift in Sources */,

@@ -194,3 +194,63 @@ BlurStackView {
     }
 }
 ```
+
+<br>
+
+## 코너뷰
+```swift
+// BlurStackView
+
+VStack(spacing: 0) {
+            headerView
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .foregroundColor(.white)
+                .background(.ultraThinMaterial, in: IndividualCorner(corners: bottomOffset < 35 ? .allCorners : [.topLeft, .topRight], radius: 16))
+                .zIndex(1)
+            Divider()
+            contentView
+                .frame(maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(.ultraThinMaterial, in: IndividualCorner(corners: [.bottomLeft, .bottomRight], radius: 16))
+                .offset(y: topOffset >= 200 ? 0 : topOffset - 200)
+                .zIndex(0)
+                .clipped() 
+        }
+        .offset(y: topOffset >= 200 ? 0 : -(topOffset - 200))
+        .background(
+            GeometryReader(content: { geometry ->
+                Color in
+                
+                let minY = geometry.frame(in: .global).minY
+                let maxY = geometry.frame(in: .global).maxY
+                
+                DispatchQueue.main.async {
+                    topOffset  = minY
+                    bottomOffset = maxY - 240
+                }
+                
+                return Color.clear
+            })
+        )
+```
+
+```swift
+// IndividualCorner
+
+struct IndividualCorner: Shape {
+    
+    var corners: UIRectCorner
+    var radius: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius) )
+        
+        return Path(path.cgPath)
+    }
+}
+
+```
+
+- 아직 headerView와 contentView가 겹쳤을 때 아랫부분 코너들의 cornerRadius 디테일 수정이 필요하다.
