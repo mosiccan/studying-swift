@@ -97,32 +97,33 @@ struct ContentView: View {
                     }
                 } contentView: {
                     VStack {
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
-                        }
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
-                        }
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
-                        }
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
+                        ForEach(forecast) { dayForecast in
+                            VStack {
+                                HStack {
+                                    Text(dayForecast.day)
+                                    
+                                    Image(systemName: dayForecast.imageName)
+                                        .symbolRenderingMode(.multicolor)
+                                    
+                                    Text("\(dayForecast.lowTemperture.description)°") // 숫자 이므로 .description
+                                    
+                                    ZStack {
+                                        Capsule()
+                                            .foregroundColor(.white)
+                                        
+                                        GeometryReader { proxy in
+                                            Capsule()
+                                                .fill(.linearGradient(Gradient(colors: [.blue, .green]), startPoint: .leading, endPoint: .trailing))
+                                                .frame(width: dayForecast.arrange)
+                                        }
+                                    }
+                                    
+                                    Text("\(dayForecast.highTemperture.description)°")
+                                }
+                            }
+                            
                         }
                     }
-                    
                 }
                 
                 BlurStackView {
@@ -160,39 +161,37 @@ struct ContentView: View {
                     
                 }
                 
-                BlurStackView {
-                    HStack {
-                        Image(systemName: "calendar")
-                        Text("10-DAY FORECAST")
-                    }
-                } contentView: {
-                    VStack {
+                HStack {
+                    BlurStackView {
                         HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
+                            Image(systemName: "thermometer.medium")
+                            Text("FEELS LIKE")
                         }
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
-                        }
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
-                        }
-                        HStack {
-                            Text("Today")
-                            Image(systemName: "cloud.fill")
-                            Text("-4°")
-                            Text("9°")
+                        
+                    } contentView: {
+                        VStack (alignment: .leading) {
+                            Text("3°")
+                                .font(.title)
+                            Spacer()
+                            Text("Wind is making it feel colder.")
                         }
                     }
                     
+                    BlurStackView {
+                        HStack {
+                            Image(systemName: "humidity")
+                            Text("HUMIDITY")
+                        }
+                        
+                    } contentView: {
+                        VStack (alignment: .leading)  {
+                            Text("71%")
+                                .font(.title)
+                            Spacer()
+                            Text("The dew point is -1° right now.")
+                        }
+                    }
+
                 }
             }
         }

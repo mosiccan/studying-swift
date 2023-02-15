@@ -254,3 +254,171 @@ struct IndividualCorner: Shape {
 ```
 
 - 아직 headerView와 contentView가 겹쳤을 때 아랫부분 코너들의 cornerRadius 디테일 수정이 필요하다.
+
+<br>
+
+## 코너뷰
+
+```swift
+BlurStackView {
+    HStack {
+        Image(systemName: "calendar")
+        Text("10-DAY FORECAST")
+    }
+} contentView: {
+    ForEach(forecast) { dayForecast in
+        VStack {
+            HStack {
+                Text(dayForecast.day)
+                
+                Image(systemName: dayForecast.imageName)
+                    .symbolRenderingMode(.multicolor)
+                
+                Text("\(dayForecast.lowTemperture.description)°") // 숫자 이므로 .description
+                
+                ZStack {
+                    Capsule()
+                        .foregroundColor(.white)
+                    
+                    GeometryReader { proxy in
+                        Capsule()
+                            .fill(.linearGradient(Gradient(colors: [.blue, .green]), startPoint: .leading, endPoint: .trailing))
+                            .frame(width: dayForecast.arrange)
+                    }
+                }
+                
+                Text("\(dayForecast.highTemperture.description)°")
+            }
+        }
+    }
+}
+
+```
+- "10-DAY FORECAST" View를 Model을 이용하여 반복문으로 간소화 해주었다.
+
+<br>
+- Forecast
+
+```swift
+import Foundation
+
+struct Forecast: Identifiable {
+    var id = UUID()
+    let day: String
+    let lowTemperture: Int
+    let highTemperture: Int
+    let imageName: String
+    let arrange: CGFloat
+}
+
+var forecast = [
+
+    Forecast(day: "Today",
+             lowTemperture: -2,
+             highTemperture: 7,
+             imageName: "cloud.fill",
+             arrange: 100),
+    Forecast(day: "Thu",
+             lowTemperture: -1,
+             highTemperture: 6,
+             imageName: "cloud.fill",
+             arrange: 100),
+    Forecast(day: "Fri",
+             lowTemperture: -3,
+             highTemperture: 11,
+             imageName: "cloud.fill",
+             arrange: 100),
+    Forecast(day: "Sat",
+             lowTemperture: 3,
+             highTemperture: 11,
+             imageName: "cloud.rain.fill",
+             arrange: 100),
+    Forecast(day: "Sun",
+             lowTemperture: -1,
+             highTemperture: 7,
+             imageName: "cloud.fill",
+             arrange: 100),
+    Forecast(day: "Mon",
+             lowTemperture: -4,
+             highTemperture: 6,
+             imageName: "sun.max.fill",
+             arrange: 100),
+    Forecast(day: "Tue",
+             lowTemperture: -5,
+             highTemperture: 3,
+             imageName: "sun.max.fill",
+             arrange: 100),
+    Forecast(day: "Wed",
+             lowTemperture: -5,
+             highTemperture: 6,
+             imageName: "cloud.fill",
+             arrange: 100),
+    Forecast(day: "Thu",
+             lowTemperture: -1,
+             highTemperture: 10,
+             imageName: "cloud.sun.fill",
+             arrange: 100),
+    Forecast(day: "Fri",
+             lowTemperture: -2,
+             highTemperture: 11,
+             imageName: "sun.max.fill",
+             arrange: 100),
+]
+```
+- 각 날짜를 구별할 수 있게 Identifiable과 UUID 만들어주기
+
+<br>
+
+```swift
+// 다른 뷰 그리기
+
+HStack {
+        BlurStackView {
+            HStack {
+                Image(systemName: "thermometer.medium")
+                Text("FEELS LIKE")
+            }
+            
+        } contentView: {
+            VStack (alignment: .leading) {
+                Text("3°")
+                    .font(.title)
+                Spacer()
+                Text("Wind is making it feel colder.")
+            }
+        }
+        
+        BlurStackView {
+            HStack {
+                Image(systemName: "humidity")
+                Text("HUMIDITY")
+            }
+            
+        } contentView: {
+            VStack (alignment: .leading)  {
+                Text("71%")
+                    .font(.title)
+                Spacer()
+                Text("The dew point is -1° right now.")
+            }
+    }
+```
+- 정사각형의 모양의 View를 만들어주기 위해 HStackdp BlurStackView를 2개 넣었다.
+
+
+<br>
+
+## 자연스럽게 사라지게 하기
+
+```swift
+// BlurStackView
+private func getOpacity() -> CGFloat {
+        if bottomOffset < 35 {
+            let progress = bottomOffset / 35
+            return progress
+        } else {
+            return 1
+        }
+    }
+```
+- getOpacity 함수를 만들어 bottomOffset 값이 35보다 작을 때 opacity 값을 bottomOffset / 35 로 하여 점점 사라지게 하는 효과를 준다.
