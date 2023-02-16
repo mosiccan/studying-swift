@@ -422,3 +422,112 @@ private func getOpacity() -> CGFloat {
     }
 ```
 - getOpacity 함수를 만들어 bottomOffset 값이 35보다 작을 때 opacity 값을 bottomOffset / 35 로 하여 점점 사라지게 하는 효과를 준다.
+
+<br>
+
+## 코드정리
+
+```swift
+import SwiftUI
+
+struct TitleLabel: View {
+    
+    let titleText: String
+    
+    var body: some View {
+        Text(titleText)
+            .font(.title)
+    }
+}
+
+struct TitleLabel_Previews: PreviewProvider {
+    static var previews: some View {
+        TitleLabel(titleText: "sample")
+    }
+}
+
+
+// 실제 사용
+TitleLabel(titleText: "71%")
+
+```
+- font 크기가 title인 것들을 한번에 관리하기 쉽게 따로 View를 만들어줌
+
+<br>
+
+```swift
+    var body: some View {
+        ZStack {
+            BackgroundView()
+            
+            ScrollView {
+                MainWeatherView()
+                // 생략
+            }
+        }
+    }
+ 
+```
+- BackgroundView(), MainWeatherView()를 함수로 만들어 ZStack의 구조를 보기 쉽게 만들어줌
+- @ViewBuilder
+
+```swift
+    @ViewBuilder
+    func BackgroundView() -> some View {
+        GeometryReader { geometry in
+            Image("cloud")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+        }
+        .ignoresSafeArea()
+    }
+    
+    @ViewBuilder
+    func MainWeatherView() -> some View {
+        VStack {
+            if offset < 50 {
+                Text("Daejeon")
+                    .font(.title)
+            } else {
+                VStack {
+                    Text("Daejeon")
+                        .font(.title)
+                    HStack {
+                        Text("6°")
+                            .font(.title3)
+                        Text("Cloudy")
+                            .font(.title3)
+                    }
+                }
+            }
+            
+            Text("6°")
+                .font(.system(size: 100, weight: .thin))
+                .opacity(setOpacity())
+            Text("Cloudy")
+                .font(.title3)
+                .opacity(setOpacity())
+            HStack {
+                Text("H:9°")
+                    .font(.title3)
+                    .opacity(setOpacity())
+                Text("L:-4°")
+                    .font(.title3)
+                    .opacity(setOpacity())
+            }
+        }
+        .offset(y: -offset + 70)
+        .foregroundColor(.white)
+        .background(
+            GeometryReader(content: { geometry ->
+                Color in
+                let minY = geometry.frame(in: .global).minY
+                DispatchQueue.main.async {
+                    offset  = minY
+                }
+                return Color.clear
+            })
+        )
+    }
+```

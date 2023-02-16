@@ -13,64 +13,10 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            GeometryReader { geometry in
-                Image("cloud")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-            }
-            .ignoresSafeArea()
-            
+            BackgroundView()
             
             ScrollView {
-                VStack {
-                    if offset < 50 {
-                        Text("Daejeon")
-                            .font(.title)
-                    } else {
-                        VStack {
-                            Text("Daejeon")
-                                .font(.title)
-                            HStack {
-                                Text("6°")
-                                    .font(.title3)
-                                Text("Cloudy")
-                                    .font(.title3)
-                            }
-                        }
-                        
-                    }
-                    
-                    Text("6°")
-                        .font(.system(size: 100, weight: .thin))
-                        .opacity(setOpacity())
-                    Text("Cloudy")
-                        .font(.title3)
-                        .opacity(setOpacity())
-                    HStack {
-                        Text("H:9°")
-                            .font(.title3)
-                            .opacity(setOpacity())
-                        Text("L:-4°")
-                            .font(.title3)
-                            .opacity(setOpacity())
-                    }
-                }
-                .offset(y: -offset + 70)
-                .foregroundColor(.white)
-                .background(
-                    GeometryReader(content: { geometry ->
-                        Color in
-                        
-                        let minY = geometry.frame(in: .global).minY
-                        
-                        DispatchQueue.main.async {
-                            offset  = minY
-                        }
-                        
-                        return Color.clear
-                    })
-                )
+                MainWeatherView()
                 
                 BlurStackView {
                     Text("Cloudy conditions will continue for the rest of the day. Wind gust are up to 5 m/s.")
@@ -170,8 +116,7 @@ struct ContentView: View {
                         
                     } contentView: {
                         VStack (alignment: .leading) {
-                            Text("3°")
-                                .font(.title)
+                            TitleLabel(titleText: "3°")
                             Spacer()
                             Text("Wind is making it feel colder.")
                         }
@@ -185,8 +130,7 @@ struct ContentView: View {
                         
                     } contentView: {
                         VStack (alignment: .leading)  {
-                            Text("71%")
-                                .font(.title)
+                            TitleLabel(titleText: "71%")
                             Spacer()
                             Text("The dew point is -1° right now.")
                         }
@@ -197,7 +141,66 @@ struct ContentView: View {
         }
     }
     
-    func setOpacity() -> CGFloat {
+    @ViewBuilder
+    func BackgroundView() -> some View {
+        GeometryReader { geometry in
+            Image("cloud")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+        }
+        .ignoresSafeArea()
+    }
+    
+    @ViewBuilder
+    func MainWeatherView() -> some View {
+        VStack {
+            if offset < 50 {
+                Text("Daejeon")
+                    .font(.title)
+            } else {
+                VStack {
+                    Text("Daejeon")
+                        .font(.title)
+                    HStack {
+                        Text("6°")
+                            .font(.title3)
+                        Text("Cloudy")
+                            .font(.title3)
+                    }
+                }
+            }
+            
+            Text("6°")
+                .font(.system(size: 100, weight: .thin))
+                .opacity(setOpacity())
+            Text("Cloudy")
+                .font(.title3)
+                .opacity(setOpacity())
+            HStack {
+                Text("H:9°")
+                    .font(.title3)
+                    .opacity(setOpacity())
+                Text("L:-4°")
+                    .font(.title3)
+                    .opacity(setOpacity())
+            }
+        }
+        .offset(y: -offset + 70)
+        .foregroundColor(.white)
+        .background(
+            GeometryReader(content: { geometry ->
+                Color in
+                let minY = geometry.frame(in: .global).minY
+                DispatchQueue.main.async {
+                    offset  = minY
+                }
+                return Color.clear
+            })
+        )
+    }
+    
+    private func setOpacity() -> CGFloat {
         if offset < 70 {
             return offset / 70
         } else {
