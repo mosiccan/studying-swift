@@ -17,7 +17,7 @@ struct BlurStackView<Header: View, Content: View>: View {
     @State var bottomOffset: CGFloat = 0
     
     init(@ViewBuilder headerView: @escaping () -> Header,
-         @ViewBuilder contentView: @escaping () -> Content  ) {
+         @ViewBuilder contentView: @escaping () -> Content) {
         self.headerView = headerView()
         self.contentView = contentView()
     }
@@ -41,7 +41,7 @@ struct BlurStackView<Header: View, Content: View>: View {
                 .clipped() 
         }
         .opacity(getOpacity())
-        .offset(y: topOffset >= offsetLimit ? 0 : -(topOffset - offsetLimit ))
+        .offset(y: topOffset >= offsetLimit ? 0 : -(topOffset - offsetLimit))
         .background(
             GeometryReader(content: { geometry ->
                 Color in
